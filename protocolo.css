@@ -1,0 +1,29 @@
+textarea {
+    resize: none;
+}
+
+.fixed-height {
+    height: 650px;
+    background-color: #d9d9d9;
+    overflow: hidden;
+}
+
+.fixed-height-col {
+    height: 630px;
+    background-color: #d9d9d9;
+    overflow: scroll;
+}
+
+
+.padded {
+    padding: 3px;
+    margin: 2px;
+}
+
+.section-hidden {
+    display: none;
+}
+
+.section-shown {
+    display: block;
+}

@@ -7,9 +7,11 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+
+    <title>Formulario de protocolo de estudio Caso-Control de BIFAP</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
    <!-- Latest compiled and minified CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -21,221 +23,436 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="protocolo.css">
+    
 
+    
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </nav>
-
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
 
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
-
-          <h2 class="sub-header">Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="page-header">
+            <h3>Protocolo BIFAP Caso control</h3>
         </div>
-      </div>
-    </div>
+        <div class="row fixed-height padded">
+         <div class="col-xs-12">
+            <div class="col-xs-3" role="navigation">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="sect_select"><a id="general_select" href="#">General</a></li><div></div>
+                    <li class="sect_select"><a id="poblacion_select"  href="#">Población</a></li><div></div>
+                    <li class="sect_select"><a id="evento_select"  href="#">Evento</a></li>
+                    <li class="sect_select"><a id="exposicion_select"  href="#">Exposición</a></li>
+                    <li class="sect_select"><a id="confusores_select"  href="#">Confusores</a></li>
+                    <li class="sect_select"><a id="analisis_select"  href="#">Análisis</a></li>
+                    <li class="sect_select"><a id="limitaciones_select"  href="#">Limitaciones</a></li>
+                    <li class="sect_select"><a id="cronograma_select"  href="#">Cronograma</a></li>
+                    <li class="sect_select"><a id="bibliografia_select"  href="#">Bibliografía</a></li>
+                </ul>
+
+            </div>
+            <div class="col-xs-9 fixed-height-col">
+                
+                <form class="form" id="miFormulario">
+                
+                
+                <div id="general" class="section section-hidden">
+                    
+                    <div class="row padded">
+                        <h3>Datos generales</h3>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="subsect_select active"><a id="general_1_select" href="#">Título y resumen</a></li>
+                            <li role="presentation" class="subsect_select"><a id="general_2_select" href="#">Antecedentes</a></li>
+                            <li role="presentation" class="subsect_select"><a id="general_3_select" href="#">Hipótesis y Objetivos</a></li>
+                            <li role="presentation" class="subsect_select"><a id="general_4_select" href="#">Pacientes y métodos</a></li>
+                            <li role="presentation" class="subsect_select"><a id="general_5_select" href="#">Diseño</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+
+                    <div id="general_1" class="subsection section-hidden">
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formTituloDelProyecto">Título del proyecto</label>
+                                <input id="formTituloDelProyecto" type="text" class="form-control"></input>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="formResumenDelProyecto">Resumen del proyecto</label>
+                                <textarea id="formResumenDelProyecto" class="form-control" rows="16" maxlength="1500"></textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="general_2" class="subsection section-hidden">
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formAntecedentes">Antecedentes</label>
+                                <textarea id="formAntecedentes" class="form-control" rows="19" maxlength="6000"></textarea>
+                            </div>
+                            
+ 
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="general_3" class="subsection section-hidden">
+                        <div class="row padded">
+                            <div class="form-group">
+                                <label for="formHipotesis">Hipótesis principal</label>
+                                <input id="formHipotesis" type="text" class="form-control"></input>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="formObjetivos">Objetivos del proyecto</label>
+                                <textarea id="formObjetivos" class="form-control" rows="16" maxlength="1000"></textarea>
+                            </div>                            
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="general_4" class="subsection section-hidden">
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formMetodos">Pacientes y métodos</label>
+                                <textarea id="formMetodos" class="form-control" rows="19" maxlength="6000"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="general_5" class="subsection section-hidden">
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formDiseno">Diseño del estudio</label>
+                                <textarea id="formDiseno" class="form-control" rows="19" maxlength="6000"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                        
+                </div>
+                
+                <div id="poblacion" class="section section-hidden">
+                    <div class="row padded">
+                        <h3>Población a estudio</h3>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="subsect_select active"><a id="poblacion_1_select" href="#">Periodo</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="poblacion_2_select" href="#">Inclusión</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="poblacion_3_select" href="#">Exclusión</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="poblacion_4_select" href="#">Comentarios</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div id="poblacion_1" class="subsection section-hidden">
+                        <div class="row padded">
+                            <h4>Periodo de estudio</h4>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                    <label class="control-label">Desde 1 de enero de:</label>
+                                    </div>
+                                    <div class="col-xs-2">
+                                    <input id="formPeriodoIni" class="form-control" type="number" max="2013" min="2001" value="2005"/>            
+                                    </div>
+                                    <div class="col-xs-3">
+                                    <label class="control-label">Hasta 31 de diciembre de:</label>
+                                    </div>
+                                    <div class="col-xs-2">
+                                    <input id="formPeriodoEnd" class="form-control" type="number" max="2014" min="2002" value="2010"/>                
+                                    </div>
+                                </div>
+                                
+                                <h4>Rango de edad</h4>
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                    <label class="control-label">Edad mínima:</label>
+                                    </div>
+                                    <div class="col-xs-2">
+                                    <input id="formEdadMin" class="form-control" type="number" max="109" min="0" value="0"/>            
+                                    </div>
+                                    <div class="col-xs-3">
+                                    <label class="control-label">Edad máxima:</label>
+                                    </div>
+                                    <div class="col-xs-2">
+                                    <input id="formEdadMax" class="form-control" type="number" max="109" min="0" value="109"/>                
+                                    </div>
+                                </div>
+
+                                <label class="control-label" for="formSexo">Sexo</label>
+                                <select id="formSexo" class="form-control">
+                                  <option selected>Ambos sexos</option>
+                                  <option>Solamente Hombres</option>
+                                  <option>Solamente Mujeres</option>
+                                </select>
+                                
+
+                                
+                            </div>
+                            
+
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="poblacion_2" class="subsection section-hidden">
+                        <div class="row padded">
+                            <h3>Criterios de inclusión</h3>
+                            <a href="#" class="btn btn-default">Añadir diagnóstico</a>
+                            <a href="#" class="btn btn-default">Añadir fármaco</a>
+                            <div class="form-group">
+                                <label for="formInclusionDiagnosticos">Lista de diagnósticos</label>
+                                <input id="formInclusionDiagnosticos" type="hidden" class="form-control"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="formInclusionFarmacos">Lista de farmacos</label>
+                                <input id="formInclusionFarmacos" type="hidden" class="form-control"></input>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="poblacion_3" class="subsection section-hidden">
+                        <div class="row padded">
+                            
+                            <h3>Criterios de exclusión</h3>
+                            <a href="#" class="btn btn-default">Añadir diagnóstico</a>
+                            <a href="#" class="btn btn-default">Añadir fármaco</a>
+                            <div class="form-group">
+                                <label for="formInclusionDiagnosticos">Lista de diagnósticos</label>
+                                <input id="formInclusionDiagnosticos" type="hidden" class="form-control"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="formInclusionFarmacos">Lista de farmacos</label>
+                                <input id="formInclusionFarmacos" type="hidden" class="form-control"></input>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    
+                    <div id="poblacion_4" class="subsection section-hidden">
+                        <div class="row padded">
+
+                            <div class="form-group">
+                                <label for="formYyy">Comentarios adicionales sobre población a estudio</label>
+                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                   
+                </div>
+                
+                
+                
+                <div id="evento" class="section section-hidden">
+                    <div class="row padded">
+                        <h3>Evento</h3>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="subsect_select active"><a id="XXXXXX_1_select" href="#">Subsection título</a></li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div id="XXXXXXX_1" class="subsection section-hidden">
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formXxx">xxxxxxxxxxxxxx</label>
+                                <input id="formXxx" type="text" class="form-control"></input>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="formYyy">xxxxxxxxxxxxxx</label>
+                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="exposicion" class="section section-hidden">
+                    <h3>Exposición</h3>
+                        <div class="row padded">
+                            <h3>Exposición</h3>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="subsect_select active"><a id="XXXXXX_1_select" href="#">Subsection título</a></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div id="XXXXXXX_1" class="subsection section-hidden">
+                            <div class="row padded">
+                                
+                                <div class="form-group">
+                                    <label for="formXxx">xxxxxxxxxxxxxx</label>
+                                    <input id="formXxx" type="text" class="form-control"></input>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="formYyy">xxxxxxxxxxxxxx</label>
+                                    <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+                <div id="confusores" class="section section-hidden">
+                    <h3>Confusores</h3>
+                        <div class="row padded">
+                            <h3>Confusores</h3>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="subsect_select active"><a id="XXXXXX_1_select" href="#">Subsection título</a></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div id="XXXXXXX_1" class="subsection section-hidden">
+                            <div class="row padded">
+                                
+                                <div class="form-group">
+                                    <label for="formXxx">xxxxxxxxxxxxxx</label>
+                                    <input id="formXxx" type="text" class="form-control"></input>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="formYyy">xxxxxxxxxxxxxx</label>
+                                    <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+                <div id="analisis" class="section section-hidden">
+                    <h3>Análisis</h3>
+                        <div class="row padded">
+                            <h3>Análisis</h3>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="subsect_select active"><a id="XXXXXX_1_select" href="#">Subsection título</a></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div id="XXXXXXX_1" class="subsection section-hidden">
+                            <div class="row padded">
+                                
+                                <div class="form-group">
+                                    <label for="formXxx">xxxxxxxxxxxxxx</label>
+                                    <input id="formXxx" type="text" class="form-control"></input>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="formYyy">xxxxxxxxxxxxxx</label>
+                                    <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+                <div id="limitaciones" class="section section-hidden">
+                    <h3>Limitaciones</h3>
+                        <div class="row padded">
+                            <h3>Limitaciones</h3>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="subsect_select active"><a id="XXXXXX_1_select" href="#">Subsection título</a></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div id="XXXXXXX_1" class="subsection section-hidden">
+                            <div class="row padded">
+                                
+                                <div class="form-group">
+                                    <label for="formXxx">xxxxxxxxxxxxxx</label>
+                                    <input id="formXxx" type="text" class="form-control"></input>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="formYyy">xxxxxxxxxxxxxx</label>
+                                    <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+                <div id="cronograma" class="section section-hidden">
+                    <h3>Cronograma</h3>
+                        <div class="row padded">
+                            <h3>Cronograma</h3>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="subsect_select active"><a id="XXXXXX_1_select" href="#">Subsection título</a></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div id="XXXXXXX_1" class="subsection section-hidden">
+                            <div class="row padded">
+                                
+                                <div class="form-group">
+                                    <label for="formXxx">xxxxxxxxxxxxxx</label>
+                                    <input id="formXxx" type="text" class="form-control"></input>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="formYyy">xxxxxxxxxxxxxx</label>
+                                    <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+                <div id="bibliografia" class="section section-hidden">
+                    <h3>Bibliografía</h3>
+                        <div class="row padded">
+                            <h3>Bibliografía</h3>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="subsect_select active"><a id="XXXXXX_1_select" href="#">Subsection título</a></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div id="XXXXXXX_1" class="subsection section-hidden">
+                            <div class="row padded">
+                                
+                                <div class="form-group">
+                                    <label for="formXxx">xxxxxxxxxxxxxx</label>
+                                    <input id="formXxx" type="text" class="form-control"></input>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="formYyy">xxxxxxxxxxxxxx</label>
+                                    <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+                
+                </form>
+
+            </div>
+         </div>
+        </div>
+
+
+ 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <script src="./protocolo.js?m"></script>
+
 
   </body>
 </html>
