@@ -3,13 +3,13 @@ textarea {
 }
 
 .fixed-height {
-    height: 650px;
+    height: 500px;
     background-color: #d9d9d9;
     overflow: hidden;
 }
 
 .fixed-height-col {
-    height: 630px;
+    height: 480px;
     background-color: #d9d9d9;
     overflow: scroll;
 }

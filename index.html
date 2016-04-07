@@ -34,7 +34,7 @@
     <div class="container-fluid">
 
         <div class="page-header">
-            <h3>Protocolo BIFAP Caso control</h3>
+        
         </div>
         <div class="row fixed-height padded">
          <div class="col-xs-12">
@@ -82,7 +82,7 @@
                             
                             <div class="form-group">
                                 <label for="formResumenDelProyecto">Resumen del proyecto</label>
-                                <textarea id="formResumenDelProyecto" class="form-control" rows="16" maxlength="1500"></textarea>
+                                <textarea id="formResumenDelProyecto" class="form-control" rows="10" maxlength="1500"></textarea>
                             </div>
                             
                         </div>
@@ -93,7 +93,7 @@
                             
                             <div class="form-group">
                                 <label for="formAntecedentes">Antecedentes</label>
-                                <textarea id="formAntecedentes" class="form-control" rows="19" maxlength="6000"></textarea>
+                                <textarea id="formAntecedentes" class="form-control" rows="10" maxlength="6000"></textarea>
                             </div>
                             
  
@@ -110,7 +110,7 @@
                             
                             <div class="form-group">
                                 <label for="formObjetivos">Objetivos del proyecto</label>
-                                <textarea id="formObjetivos" class="form-control" rows="16" maxlength="1000"></textarea>
+                                <textarea id="formObjetivos" class="form-control" rows="10" maxlength="1000"></textarea>
                             </div>                            
                             
                             
@@ -122,7 +122,7 @@
                             
                             <div class="form-group">
                                 <label for="formMetodos">Pacientes y métodos</label>
-                                <textarea id="formMetodos" class="form-control" rows="19" maxlength="6000"></textarea>
+                                <textarea id="formMetodos" class="form-control" rows="10" maxlength="6000"></textarea>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                             
                             <div class="form-group">
                                 <label for="formDiseno">Diseño del estudio</label>
-                                <textarea id="formDiseno" class="form-control" rows="19" maxlength="6000"></textarea>
+                                <textarea id="formDiseno" class="form-control" rows="10" maxlength="6000"></textarea>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,9 @@
                         <div class="row padded">
                             
                             <h3>Criterios de exclusión</h3>
-                            <a href="#" class="btn btn-default">Añadir diagnóstico</a>
+                            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#myModal">Añadir diagnóstico</a>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Añadir diagnostico button</button>
                             <a href="#" class="btn btn-default">Añadir fármaco</a>
                             <div class="form-group">
                                 <label for="formInclusionDiagnosticos">Lista de diagnósticos</label>
@@ -245,8 +247,8 @@
                         <div class="row padded">
 
                             <div class="form-group">
-                                <label for="formYyy">Comentarios adicionales sobre población a estudio</label>
-                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                                <label for="formPoblacionComentarios">Comentarios adicionales sobre población a estudio</label>
+                                <textarea id="formPoblacionComentarios" class="form-control" rows=10 maxlength="1500"></textarea>
                             </div>
                             
                         </div>
@@ -440,6 +442,24 @@
                 
                 </form>
 
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Seleccionar diagnóstico</h4>
+                      </div>
+                      <div class="modal-body">
+                        <input id="anadirDiagnostico" class="form-control typeahead" type="text"></input>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
          </div>
         </div>
