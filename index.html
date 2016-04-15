@@ -22,9 +22,17 @@
    <!-- Latest compiled and minified JavaScript -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+<!-- Typeahead https://cdnjs.com/libraries/typeahead.js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="protocolo.css">
+    <!-- Arregla problemas con typeahead en modal from: https://github.com/hyspace/typeahead.js-bootstrap3.less/blob/master/typeahead.css -->
+    <link rel="stylesheet" type="text/css" href="typeahead_bootstrap3_fix.css">
     
+    
+    <!-- carga la lista de diagnosticos CIAP4 -->
+    <script src="./ciaps4.json.js?m"></script>
 
     
   </head>
@@ -207,14 +215,18 @@
                     <div id="poblacion_2" class="subsection section-hidden">
                         <div class="row padded">
                             <h3>Criterios de inclusión</h3>
-                            <a href="#" class="btn btn-default">Añadir diagnóstico</a>
-                            <a href="#" class="btn btn-default">Añadir fármaco</a>
+                            <div id="botonesInclusion">
+                            <button id="addInclusionDiagnosisButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDiagnosisModal">Añadir diagnóstico</button>
+                            <button id="addInclusionDrugButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDrugModal">Añadir fármaco</button>
+                            </div>
                             <div class="form-group">
-                                <label for="formInclusionDiagnosticos">Lista de diagnósticos</label>
+                                <label for="formInclusionDiagnosticos">Lista de diagnósticos de inclusión</label>
+                                <div id="formInclusionDiagnosticosList"></div>
                                 <input id="formInclusionDiagnosticos" type="hidden" class="form-control"></input>
                             </div>
                             <div class="form-group">
-                                <label for="formInclusionFarmacos">Lista de farmacos</label>
+                                <label for="formInclusionFarmacos">Lista de fármacos de inclusión</label>
+                                <div id="formInclusionFarmacosList"></div>
                                 <input id="formInclusionFarmacos" type="hidden" class="form-control"></input>
                             </div>
                             
@@ -226,17 +238,20 @@
                         <div class="row padded">
                             
                             <h3>Criterios de exclusión</h3>
-                            <a href="#" class="btn btn-default" data-toggle="modal" data-target="#myModal">Añadir diagnóstico</a>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Añadir diagnostico button</button>
-                            <a href="#" class="btn btn-default">Añadir fármaco</a>
+                            <div id="botonesExclusion">
+                            <button id="addExclusionDiagnosisButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDiagnosisModal">Añadir diagnóstico</button>
+                            <button id="addExclusionDrugButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDrugModal">Añadir fármaco</button>
+                            </div>
+          
                             <div class="form-group">
-                                <label for="formInclusionDiagnosticos">Lista de diagnósticos</label>
-                                <input id="formInclusionDiagnosticos" type="hidden" class="form-control"></input>
+                                <label for="formExclusionDiagnosticos">Lista de diagnósticos de exclusión</label>
+                                <div id="formExclusionDiagnosticosList"></div>
+                                <input id="formExclusionDiagnosticos" type="hidden" class="form-control"></input>
                             </div>
                             <div class="form-group">
-                                <label for="formInclusionFarmacos">Lista de farmacos</label>
-                                <input id="formInclusionFarmacos" type="hidden" class="form-control"></input>
+                                <label for="formExclusionFarmacos">Lista de fármacos de exclusión</label>
+                                <div id="formExclusionFarmacosList"></div>
+                                <input id="formExclusionFarmacos" type="hidden" class="form-control"></input>
                             </div>
                             
 
@@ -260,28 +275,125 @@
                 
                 <div id="evento" class="section section-hidden">
                     <div class="row padded">
-                        <h3>Evento</h3>
+                        <h3>Evento (caso)</h3>
                         <ul class="nav nav-tabs">
-                            <li role="presentation" class="subsect_select active"><a id="XXXXXX_1_select" href="#">Subsection título</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="evento_1_select" href="#">Tipo de evento</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="evento_2_select" href="#">Definición</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="evento_3_select" href="#">Opciones avanzadas</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="evento_4_select" href="#">Definición operativa (opcional)</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="evento_5_select" href="#">Comentarios</a></li>
                             
                         </ul>
                     </div>
                     
-                    <div id="XXXXXXX_1" class="subsection section-hidden">
+                    <div id="evento_1" class="subsection section-hidden">
+                        <div class="row padded">
+                            <div class="form-group">
+                                <label class="control-label" for="formSexo">El evento (caso) a estudiar tiene que ver con:</label>
+                                <select id="formSexo" class="form-control">
+                                    <option selected>Un diagnóstico</option>
+                                    <option>El uso de un fármaco</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div id="evento_2" class="subsection section-hidden">
                         <div class="row padded">
                             
                             <div class="form-group">
-                                <label for="formXxx">xxxxxxxxxxxxxx</label>
-                                <input id="formXxx" type="text" class="form-control"></input>
+                                <label for="formXxx">Escriba una definición clínica del evento (definición de caso) que quiere incluir en el estudio</label>
+                                <textarea id="formYyy" class="form-control" rows="6" maxlength="1500"></textarea>
+                            </div>
+                            
+                            
+                            
+
+                            
+                            
+                            
+                            <div class="form-group">
+                                <div>La definición de caso incluye el uso de algún fármaco
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoUsaFarmaco" id="eventoUsaFarmacoSi" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoUsaFarmaco" id="eventoUsaFarmacoNo" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                                
                             </div>
                             
                             <div class="form-group">
-                                <label for="formYyy">xxxxxxxxxxxxxx</label>
-                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                                <div>La definición requiere datos adicionales (analíticas, derivaciones a especialistas...)
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoUsaDGP" id="eventoUsaDGPSi" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoUsaDGP" id="eventoUsaDGPNo" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                                
                             </div>
+                            
+
                             
                         </div>
                     </div>
+                    
+                    <div id="evento_3" class="subsection section-hidden">
+                        <div class="row padded">
+                            
+                            <h3>Opciones avanzadas</h3>
+                            <div id="botonesEventoDiagnostico">
+                            <button id="addEventoDiagnosisButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDiagnosisModal">Añadir diagnóstico</button>
+                            <button id="addEventoDiagnosisButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDiagnosisModal">Añadir diagnóstico</button>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="formEventoDiagnosticos">Lista de diagnósticos</label>
+                                <div id="formEventoDiagnosticosList"></div>
+                                <input id="formEventoDiagnosticos" type="hidden" class="form-control"></input>
+                            </div>
+                           
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="evento_4" class="subsection section-hidden">
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formXxx">Si tiene experiencia usando datos de BIFAP puede opcionalmente describir una definición operativa más detallada</label>
+                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                    
+                    
+                    <div id="evento_5" class="subsection section-hidden">
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formXxx">Añada comentarios adicionales sobre la definición del evento de interés</label>
+                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 </div>
                 <div id="exposicion" class="section section-hidden">
                     <h3>Exposición</h3>
@@ -443,23 +555,44 @@
                 </form>
 
                 <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal fade" id="addDiagnosisModal" tabindex="-1" role="dialog" aria-labelledby="addDiagnosisModalLabel">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Seleccionar diagnóstico</h4>
+                        <h4 class="modal-title" id="addDiagnosisModalLabel">Añadir diagnóstico</h4>
                       </div>
                       <div class="modal-body">
-                        <input id="anadirDiagnostico" class="form-control typeahead" type="text"></input>
+                        <input id="anadirDiagnosticoInput" class="form-control" type="text"></input>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id= "add_diagnosis" type="button" class="btn btn-primary">Añadir</button>
                       </div>
                     </div>
                   </div>
                 </div>
+                
+                
+                <!-- Modal -->
+                <div class="modal fade" id="addDrugModal" tabindex="-1" role="dialog" aria-labelledby="addDrugModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addDrugModalLabel">Añadir fármaco</h4>
+                      </div>
+                      <div class="modal-body">
+                        <input id="anadirFarmacoInput" class="form-control" type="text"></input>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id= "add_drug" type="button" class="btn btn-primary">Añadir</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
             </div>
          </div>
         </div>
