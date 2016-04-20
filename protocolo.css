@@ -28,6 +28,8 @@ textarea {
     display: block;
 }
 
-
+.hidden {
+    display: none;
+}
 
 
