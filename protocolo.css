@@ -32,4 +32,15 @@ textarea {
     display: none;
 }
 
+.help-icon {
+    color: #0357FF;
+    vertical-align: top;
+    padding: 2px;
+    cursor: help;
+    font-size: 1.5em;
+    /* outline: 1px auto #0357FF;*/
+}
 
+.help-button {
+    cursor: help;
+}
