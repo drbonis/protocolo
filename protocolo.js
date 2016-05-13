@@ -1,3 +1,9 @@
+normalizaNombreVariable = function(texto_original) {
+    return texto_original.replace(" ","_").replace(/[\W]/gmi, "").toUpperCase();;
+    
+}
+
+
 function showSection(section_id,level){
     $("."+level).addClass("section-hidden");
     $("#"+section_id).toggleClass("section-hidden");
@@ -51,16 +57,12 @@ hideAllCovariables = function () {
 hideElement = function(myElement) {
     if($(myElement).hasClass("hidden")==false) {
         $(myElement).toggleClass("hidden");
-        console.log("oculto desde hideElement");
-        console.log(myElement);
     }
 }
 
 showElement = function(myElement) {
     if($(myElement).hasClass("hidden")) {
         $(myElement).toggleClass("hidden");
-        console.log("muestro desde showElement");
-        console.log(myElement);
     }
 }
 
@@ -87,12 +89,33 @@ showCovariable = function(targetRoot, numCov) {
     
 }
 
-addCovariable = function(targetRoot) {
+addCovariable = function(targetRoot,name,type) {
 
     
     // funcion que añade las secciones de una nueva covariable
+
+
+    // si es la primera covariable el valor máximo del numCov es cero
+    // y a partir de ahí la nueva covariable será numCov+1
+    // si ya hay covariables extraigo el numCov mayor existente
+    // en los ids de las covariables (por si se ha borrado alguno 
+    // en mitad de la lista)
     
-    numCov = ($("#"+targetRoot+"_1").children().length);
+    countCov = ($("#"+targetRoot+"_1").children().length);
+    if(countCov > 0) {
+        numCovArray = new Array;
+        $("#"+targetRoot+"_1").children().each(function(){
+            regExp = /(\d+)_(\d+)/g;
+            matches = regExp.exec($(this).attr("id"));
+            numCovArray.push(parseInt(matches[2]));
+            numCov = Math.max.apply(Math,numCovArray);
+        });
+    } else {
+        numCov = 0;
+        showElement($("#listadoCovariables")); // solo aplica si antes no había ninguna covariables
+        showElement($("#subseccionesCovariable")); // solo aplica si antes no había ninguna covariable
+    }
+
     
     /*
     el texto a añadir a cada subseccion de cada covariable
@@ -110,12 +133,14 @@ addCovariable = function(targetRoot) {
     subsect_5_covariable_html = $("#covariables_5_html").html().replace(/_xxx/g,"_5_"+(numCov+1).toString());
     
     
+
     
+    //añado al listado de covariables en el select
+
+    $("#listadoCovariables").append("<option id=\"covariableOption_"+(numCov+1).toString()+"\" value=\""+(numCov+1).toString()+"\" class=\"covariable-option\">"+name+"</option>");
     
-    
-    // actualizo contadores de navegador de covariables
-    $("#countCovariable").html((numCov+1).toString());
-    $("#punteroCovariable").html((numCov+1).toString());
+    $("#listadoCovariables").val($("#covariableOption_"+(numCov+1).toString()).val());
+
 
     // añado subsecciones de la nueva covariable
     $("#"+targetRoot+"_1").append("<div id='"+targetRoot+"_1_"+(numCov+1).toString()+"' class='row padded covariable-subsection'>"+subsect_1_covariable_html+"</div>");
@@ -125,21 +150,39 @@ addCovariable = function(targetRoot) {
     $("#"+targetRoot+"_5").append("<div id='"+targetRoot+"_5_"+(numCov+1).toString()+"' class='row padded covariable-subsection'>"+subsect_5_covariable_html+"</div>");
 
 
+    // pueblo el nombre y el tipo 
+    $("#formNombreCovariable_1_"+(numCov+1).toString()).val(name);
+    $("#formTipoCovariable_1_"+(numCov+1).toString()).val(type);
+
+
     // muestro la nueva covariable
+
     showCovariable(targetRoot,numCov+1);
+    setCovariableOptions("formTipoCovariable_1_"+(numCov+1).toString(),numCov+1); // muestr opciones de la covariable según el tipo
     addBehaviourCovariableSelect(numCov+1);
-    $("#confusores_select").click(); // para que muestre la primera subsección
+    
+    $("#covariables_1_select").click(); // para que muestre la primera subsección
+    
+    
+    
+    $(".name-covariable").on("keyup", function(e){
+        $(this).val(normalizaNombreVariable($(this).val()));
+        regExp = /(\d+)_(\d+)/g;
+        matches = regExp.exec($(this).attr("id"));
+        covId = parseInt(matches[2]);
+        $("#covariableOption_"+covId.toString()).html($(this).val());
+    });
+    
+    
+    
 }
 
 delCovariable = function(targetRoot, numCovToDel) {
-    numCov = ($("#"+targetRoot+"_1").children().length);
-    if(numCovToDel > 0 && numCovToDel == numCov) {
+
+    if(numCovToDel > 0 ) {
         hideAllCovariables();
-        
-        
-        // actualizo contadores de navegador de covariables
-        $("#countCovariable").html((numCov-1).toString());
-        $("#punteroCovariable").html((numCovToDel-1).toString());
+    
+
         
         // elimino subsecciones de la covariable
         $("#"+targetRoot+"_1_"+(numCovToDel).toString()).remove();
@@ -147,48 +190,81 @@ delCovariable = function(targetRoot, numCovToDel) {
         $("#"+targetRoot+"_3_"+(numCovToDel).toString()).remove();
         $("#"+targetRoot+"_4_"+(numCovToDel).toString()).remove();
         $("#"+targetRoot+"_5_"+(numCovToDel).toString()).remove();
-        showCovariable(targetRoot, numCovToDel - 1);
+        
+        // elimino la opcion del select de covariables
+        $("#covariableOption_"+(numCovToDel).toString()).remove();    
+        
+        //ninguna covariable seleccionada en select
+        
+         if ($(".covariable-option").length > 0) { // queda al menos otra covariable
+            // en ese caso selecciono y muestro la primera covariable
+            $("#listadoCovariables").val($("#listadoCovariables option:first").val());
+            showCovariable(targetRoot, $("#listadoCovariables option:first").val());
+         } else {
+             hideElement($("#listadoCovariables"));
+             hideElement($("#subseccionesCovariable"));
+         }
     }
 };
 
+
+setCovariableOptions = function(select_id,numNewCov) {
+    value_selected = $("#"+select_id.toString()+" :selected").attr("value");
+
+    covariableDefDiagnostico = $("#covariables_2_"+numNewCov.toString()).children(".covariable-diagnostico");
+    covariableDefFarmaco = $("#covariables_2_"+numNewCov.toString()).children(".covariable-farmaco");
+    covariableDefOtros = $("#covariables_2_"+numNewCov.toString()).children(".covariable-otros");
+    
+    covariableAvanDiagTrat = $("#covariables_3_"+numNewCov.toString()).children(".covariable-avanzadas-diagnostico-tratamiento");
+    covariableAvanOtros = $("#covariables_3_"+numNewCov.toString()).children(".covariable-avanzadas-otros");
+
+
+    
+    hideElement(covariableDefDiagnostico);
+    hideElement(covariableDefFarmaco);
+    hideElement(covariableDefOtros);
+    hideElement(covariableAvanDiagTrat);
+    hideElement(covariableAvanOtros);
+    
+    switch (value_selected) {
+        case "diagnostico":
+            showElement(covariableDefDiagnostico);
+            showElement(covariableAvanDiagTrat);
+            break;
+        case "farmaco":
+            showElement(covariableDefFarmaco);
+            showElement(covariableAvanDiagTrat);
+            break;
+        default:
+            showElement(covariableDefOtros);
+            showElement(covariableAvanOtros);
+            break;
+            
+    }
+    
+}
+
 addBehaviourCovariableSelect = function(numNewCov) {
+    
     select_id = "formTipoCovariable_1_"+(numNewCov).toString();
-    console.log(select_id);
+    console.log("addBehaviourCovariableSelect::: "+select_id);
     $("#"+select_id).on("change",function(e){
+        console.log("setCovariableOptions::::: select_id: "+$(this).attr("id")+"  numNewCov: "+numNewCov.toString());
         e.preventDefault();
-        value_selected = $("#"+select_id.toString()+" :selected").attr("value");
-
-        covariableDefDiagnostico = $("#covariables_2_"+numNewCov.toString()).children(".covariable-diagnostico");
-        covariableDefFarmaco = $("#covariables_2_"+numNewCov.toString()).children(".covariable-farmaco");
-        covariableDefOtros = $("#covariables_2_"+numNewCov.toString()).children(".covariable-otros");
-        
-        covariableAvanDiagTrat = $("#covariables_3_"+numNewCov.toString()).children(".covariable-avanzadas-diagnostico-tratamiento");
-        covariableAvanOtros = $("#covariables_3_"+numNewCov.toString()).children(".covariable-avanzadas-otros");
-        
-
-        
-        hideElement(covariableDefDiagnostico);
-        hideElement(covariableDefFarmaco);
-        hideElement(covariableDefOtros);
-        hideElement(covariableAvanDiagTrat);
-        hideElement(covariableAvanOtros);
-        
-        switch (value_selected) {
-            case "diagnostico":
-                showElement(covariableDefDiagnostico);
-                showElement(covariableAvanDiagTrat);
-                break;
-            case "farmaco":
-                showElement(covariableDefFarmaco);
-                showElement(covariableAvanDiagTrat);
-                break;
-            default:
-                showElement(covariableDefOtros);
-                showElement(covariableAvanOtros);
-                break;
-                
-        }
+        setCovariableOptions($(this).attr("id"),numNewCov);
     });
+    
+    $("#formBorrarCovariable_1_"+numNewCov.toString()).on("click", function(e){
+        e.preventDefault();
+        regExp = /(\d+)_(\d+)/g;
+        matches = regExp.exec($(this).attr("id"));
+        covId = parseInt(matches[2]);
+        $("#remove_covariable_button").attr("covariableParaBorrar",(covId).toString());
+        $("#delCovariableModal").modal("show");
+        $(".nombreCovariableParaBorrar").html("<strong>"+$("#covariableOption_"+numNewCov).html()+"</strong>");
+        //delCovariable("covariables",covId);
+    });
+    
 }
 
 
@@ -283,43 +359,41 @@ $(document).ready(function() {
     
     $("#addCovariable").click(function(e){
         e.preventDefault();
-        addCovariable("covariables");
+
+
+        addCovariable("covariables",$("#modalNombreCovariable").val(),$("#modalTipoCovariable").val());
+        $("#addCovariableModal").modal('toggle');
+        $("#modalNombreCovariable").val("");
+        $("#modalTipoCovariable").val("diagnostico");
     });
-    $("#nextCovariable").click(function(e){
+    
+
+    
+    $("button").click(function(e){
         e.preventDefault();
+    })
 
-        numCov = ($("#covariables_1").children().length);
-        pointerCov = parseInt($("#punteroCovariable").html());
-
-        if(pointerCov < numCov) {
-            newPointer = pointerCov + 1;
-        } else {
-            newPointer = numCov;
-        }
-        $("#punteroCovariable").html(newPointer.toString());
-        showCovariable("covariables",newPointer);
-    });
-    $("#prevCovariable").click(function(e){
+    
+    $("#remove_covariable_button").on("click",function(e){
+        //console.log($(this).attr("covariableParaBorrar"));
         e.preventDefault();
-
-        numCov = ($("#covariables_1").children().length);
-        pointerCov = parseInt($("#punteroCovariable").html());
-        if(pointerCov > 1) {
-            newPointer = pointerCov - 1;
-        } else {
-            if(numCov == 0) {
-                newPointer = 0;
-            } else {
-                newPointer = 1;    
-            }
-        }
-        $("#punteroCovariable").html(newPointer.toString());
-        showCovariable("covariables",newPointer);
-    });
+        delCovariable("covariables",parseInt($(this).attr("covariableParaBorrar")));
+        console.log("delCovariable OK");
+        $(this).attr("covariableParaBorrar","");
+        $("#delCovariableModal").modal("hide");
+        console.log("delCovariableModal hide OK");
+    })
+ 
     $("#delCovariable").click(function(e){
         e.preventDefault();
         pointerCov = parseInt($("#punteroCovariable").html());
         delCovariable("covariables",pointerCov);
+    });
+    
+    $("#listadoCovariables").on("change",function(){
+        showCovariable("covariables",$("#"+$(this).attr("id")+" :selected").val());
+        
+        
     });
     
     
@@ -367,13 +441,11 @@ $(document).ready(function() {
         }
     });
     
-    
-    /* help buttons 
-    $(".help-icon").on("click",function(e){
-        console.log($(this).attr("help-target"));
+
+    $(".input-normalizado").on("keyup",function(){
+        
+        $(this).val(normalizaNombreVariable($(this).val()));    
     });
-    */
-    
     
 
 });

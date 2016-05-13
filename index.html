@@ -28,17 +28,20 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="protocolo.css">
     <!-- Arregla problemas con typeahead en modal from: https://github.com/hyspace/typeahead.js-bootstrap3.less/blob/master/typeahead.css -->
-    <link rel="stylesheet" type="text/css" href="typeahead_bootstrap3_fix.css">
+    <!--<link rel="stylesheet" type="text/css" href="typeahead_bootstrap3_fix.css">-->
     
     
     <!-- carga la lista de diagnosticos CIAP4 -->
-    <script src="./ciaps4.json.js?m"></script>
+    <!--<script src="./ciaps4.json.js?m"></script>-->
 
     
   </head>
 
   <body>
 
+
+<!-- TEXTOS AYUDA ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+<div>
     <!-- Modal -->
     <div class="modal fade" id="ayuda_01-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -54,7 +57,7 @@
 
           </div>
           <div class="modal-footer">
-              <div>referencia: 01-00</div>
+              <span class="ref">referencia: 01-00</span>
           </div>
         </div>
       </div>
@@ -71,7 +74,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 01-01</div>
+              <span class="ref">referencia: 01-01</span>
           </div>
         </div>
       </div>
@@ -88,7 +91,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 01-02</div>
+              <span class="ref">referencia: 01-02</span>
           </div>
         </div>
       </div>
@@ -105,7 +108,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 01-03</div>
+              <span class="ref">referencia: 01-03</span>
           </div>
         </div>
       </div>
@@ -122,7 +125,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 02-00</div>
+              <span class="ref">referencia: 02-00</span>
           </div>
         </div>
       </div>
@@ -139,7 +142,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 03-00</div>
+              <span class="ref">referencia: 03-00</span>
           </div>
         </div>
       </div>
@@ -156,7 +159,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 04-00</div>
+              <span class="ref">referencia: 04-00</span>
           </div>
         </div>
       </div>
@@ -173,7 +176,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 05-00</div>
+              <span class="ref">referencia: 05-00</span>
           </div>
         </div>
       </div>
@@ -190,7 +193,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 06-00</div>
+              <span class="ref">referencia: 06-00</span>
           </div>
         </div>
       </div>
@@ -207,7 +210,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 07-00</div>
+              <span class="ref">referencia: 07-00</span>
           </div>
         </div>
       </div>
@@ -224,7 +227,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 08-00</div>
+              <span class="ref">referencia: 08-00</span>
           </div>
         </div>
       </div>
@@ -242,12 +245,12 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="modal-footer">
-              <div>referencia: 09-00</div>
+              <span class="ref">referencia: 09-00</span>
           </div>
         </div>
       </div>
     </div>
-    
+</div>
     
     
     
@@ -255,7 +258,7 @@
     <div class="container-fluid">
 
         <div class="page-header">
-        
+            <h4>Protocolo de diseño Caso-Control BIFAP v0.1</h4>
         </div>
         <div class="row fixed-height padded">
          <div class="col-xs-12">
@@ -301,6 +304,7 @@
                     
 
                     <div id="general_1" class="subsection section-hidden">
+                        <span class="ref">ref: general_1</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -317,6 +321,7 @@
                     </div>
                     
                     <div id="general_2" class="subsection section-hidden">
+                        <span class="ref">ref: general_2</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -330,6 +335,7 @@
                     </div>
                     
                     <div id="general_3" class="subsection section-hidden">
+                        <span class="ref">ref: general_3</span>
                         <div class="row padded">
                             <div class="form-group">
                                 <label for="formHipotesis">Hipótesis principal</label>
@@ -346,6 +352,7 @@
                     </div>
                     
                     <div id="general_4" class="subsection section-hidden">
+                        <span class="ref">ref: general_4</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -356,6 +363,7 @@
                     </div>
                     
                     <div id="general_5" class="subsection section-hidden">
+                        <span class="ref">ref: general_5</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -385,6 +393,7 @@
                     </div>
 
                     <div id="poblacion_1" class="subsection section-hidden">
+                        <span class="ref">ref: poblacion_1</span>
                         <div class="row padded">
                             <h4>Periodo de estudio</h4>
                             <div class="form-group">
@@ -436,6 +445,7 @@
                     </div>
                     
                     <div id="poblacion_2" class="subsection section-hidden">
+                        <span class="ref">ref: poblacion_2</span>
                         <div class="row padded">
                             <h3>Criterios de inclusión</h3>
                             <div id="botonesInclusion">
@@ -458,6 +468,7 @@
                     </div>
                     
                     <div id="poblacion_3" class="subsection section-hidden">
+                        <span class="ref">ref: poblacion_3</span>
                         <div class="row padded">
                             
                             <h3>Criterios de exclusión</h3>
@@ -482,6 +493,7 @@
                     </div>
                     
                     <div id="poblacion_4" class="subsection section-hidden">
+                        <span class="ref">ref: poblacion_4</span>
                         <div class="row padded">
 
                             <div class="form-group">
@@ -510,6 +522,7 @@
                     </div>
                     
                     <div id="evento_1" class="subsection section-hidden">
+                        <span class="ref">ref: evento_1</span>
                         <div class="row padded">
                             <div class="form-group">
                                 <label class="control-label" for="formSexo">El evento (caso) a estudiar tiene que ver con:</label>
@@ -524,6 +537,7 @@
                     
                     
                     <div id="evento_2" class="subsection section-hidden">
+                        <span class="ref">ref: evento_2</span>
                         <div class="row padded evento-diagnostico">
                             <div class="form-group">
                                 <label for="formXxx">Escriba una definición clínica del evento (definición de caso) que quiere incluir en el estudio</label>
@@ -556,6 +570,7 @@
                     </div>
                     
                     <div id="evento_3" class="subsection section-hidden">
+                        <span class="ref">ref: evento_3</span>
                         <div class="row padded evento-diagnostico">
 
                             
@@ -659,6 +674,7 @@
                     </div>
                     
                     <div id="evento_4" class="subsection section-hidden">
+                        <span class="ref">ref: evento_4</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -672,6 +688,7 @@
                     
                     
                     <div id="evento_5" class="subsection section-hidden">
+                        <span class="ref">ref: evento_5</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -700,6 +717,7 @@
                     </div>
                     
                     <div id="exposicion_1" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_1</span>
                         <div class="row padded">
                             <div class="form-group">
                                 <label class="control-label" for="formSexo">La exposición principal (factor de riesgo) a estudiar tiene que ver con:</label>
@@ -714,6 +732,7 @@
                     
                     
                     <div id="exposicion_2" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_2</span>
                         <div class="row padded exposicion-diagnostico">
                             <div class="form-group">
                                 <label for="formXxx">Escriba una definición clínica de la exposición que quiere incluir en el estudio</label>
@@ -744,6 +763,7 @@
                     </div>
                     
                     <div id="exposicion_3" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_3</span>
                         <div class="row padded exposicion-diagnostico">
 
                             
@@ -841,6 +861,7 @@
                     </div>
                     
                     <div id="exposicion_4" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_4</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -854,6 +875,7 @@
                     
                     
                     <div id="exposicion_5" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_5</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -873,127 +895,148 @@
 <!-- CONFUSORES ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
                 
                 <div id="confusores" class="section section-hidden">
+                    <div class="row padded">
+                        <div class="col-xs-12 fixed-height-col">
+                            <div class="row padded">
+                                <div class="col-xs-12">
+                                    <h3>Covariables / Variables confusoras<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_05-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button><span class="ref">ref: covariables_0</span></h3>
 
-                        <div class="row padded">
-                            <h3>Covariables / Variables confusoras<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_05-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
-                            <button class="btn btn-default" id="prevCovariable">
-                                <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
-                            </button>
-                            <span id="punteroCovariable">0</span> de <span id="countCovariable">0</span>
-                            <button class="btn btn-default" id="nextCovariable">
-                                <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-                            </button>
-        
-                            <button class="btn btn-default" id="addCovariable">Añadir</button>
-                            <button class="btn btn-danger hidden" id="delCovariable">Borrar</button>
-                            <ul class="nav nav-tabs">
-                                <li role="presentation" class="subsect_select active"><a id="covariables_1_select" href="#">Tipo de covariable</a></li>
-                                <li role="presentation" class="subsect_select active"><a id="covariables_2_select" href="#">Definición</a></li>
-                                <li role="presentation" class="subsect_select active"><a id="covariables_3_select" href="#">Opciones avanzadas</a></li>
-                                <li role="presentation" class="subsect_select active"><a id="covariables_4_select" href="#">Definición operativa (opcional)</a></li>
-                                <li role="presentation" class="subsect_select active"><a id="covariables_5_select" href="#">Comentarios</a></li>
-                                
-                            </ul>
-                            <!-- este bloque esta siempre oculto
-                            pero sirve para almacenar el contenido que se añadira a 
-                            cada covariable en la funcion javascript: addCovariable(target)
-                            los elementos de formulario son marcados con clase .covariable-cambiante
-                            para que sus ids sean asignados dinámicamente después de ser creados
-                            -->
-                            <div id="bloqueContenidoCovariables" style="display:none">
-                                <div id="covariables_1_html" class="hidden" style="display:none">
-                                    <div class="row padded">
-                                        <div class="form-group">
-                                            <label class="control-label" for="formSexo">La covariable es:</label>
-                                            <select id="formTipoCovariable_xxx" class="form-control covariable-cambiante">
-                                                <option value="diagnostico" selected>Un diagnóstico</option>
-                                                <option value="farmaco">El uso de un fármaco</option>
-                                                <option value="tabaco">Tabaquismo</option>
-                                                <option value="alcohol">Consumo de alcohol</option>
-                                                <option value="imc">Índice de masa corporal</option>
+                                    <div class="form-group row">
+                                        <div class="col-xs-2">
+                                            <button class="btn btn-info" id="addCovariableLauncher" data-toggle="modal" data-target="#addCovariableModal">Añadir</button>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <select id="listadoCovariables" class="form-control hidden">
+                                            
                                             </select>
                                         </div>
-                                    </div>
-                                </div>
-                                <div id="covariables_2_html" class="hidden" style="display:none">
-                                    
-                                    <div class="row padded covariable-diagnostico">
-                                        <div class="form-group">
-                                            <label for="formDefinicionCovariableDiagnostico_xxx">Defina la covariable diagnóstica</label>
-                                            <textarea id="formYyy" class="form-control" rows="6" maxlength="1500"></textarea>
-                                        </div>
-                                    </div>
-                                    
-                                    
-                                    <div class="row padded covariable-farmaco hidden">
-                                       <div class="form-group">
-                                           <label for="formDefinicionCovariableFarmaco_xxx">Defina la covariable de uso de fármaco</label>
-                                           <textarea id="formDefinicionCovariableFarmaco_xxx" class="form-control" rows="6" maxlength="1500"></textarea>
-                                       </div>
-                                    
-                                    </div>
-                                    
-                                    <div class="row padded covariable-otros hidden">
-                                       <div class="form-group">
-                                           <div>La definición de la covariable será la predefinida en BIFAP. Consulte la ayuda para conocer esa definición. Si tiene experiencia utilizando BIFAP y desea una definición alternativa descríbala en la sección: "Definición operativa".</div>
-                                       </div>
-                                    
-                                    </div>
-                                    
-                                </div>
-                                <div id="covariables_3_html" class="hidden" style="display:none">
-                                    <div class="row padded covariable-avanzadas-diagnostico-tratamiento">
-                                        <div id="" class="form-group">
-                                            Buscar la covariable:
-                                            <div>
-                                                <input type="radio" name="rangoTemporalCovariable_xxx" id="" value="ever" checked> en cualquier momento antes de la fecha del evento.
-                                            </div>
-                                            <div>
-                                                <input type="radio" name="rangoTemporalCovariable_xxx" id="" value="recent"> solo en los <input id="rangoTemporalDiasCovariable_xxx" type="text" value="30" size="2"> días previos a la fecha del evento.
-                                            </div>
-                                            *En ambos casos se ofrecerá la fecha más cercana al evento principal
 
-                                        </div>
                                     </div>
-                                    <div class="row padded covariable-avanzadas-otros hidden">
-                                        <div class="form-group">
-                                            No existen opciones avanzadas para este tipo de covariable.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="covariables_4_html" class="hidden" style="display:none">
-                                    <div class="row padded covariable-operativa">
-                                       <div class="form-group">
-                                           <label for="formXxx">Si tiene experiencia usando datos de BIFAP puede opcionalmente describir una definición operativa más detallada</label>
-                                           <textarea id="formYyy" class="form-control" rows="10" maxlength="1500"></textarea>
-                                       </div>
                                     
-                                    </div>
+                                        
                                 </div>
-                                <div id="covariables_5_html" class="hidden" style="display:none">
-                                    <div class="row padded covariable-comentarios">
-                                       <div class="form-group">
-                                           <label for="formXxx">Añada comentarios adicionales sobre la definición de la covariable</label>
-                                           <textarea id="formYyy" class="form-control" rows="10" maxlength="1500"></textarea>
-                                       </div>
-                                    
+                            </div>                                    
+                            <div class="row padded">
+                                    <div class="col-xs-12">
+    
+                                        <ul id="subseccionesCovariable" class="nav nav-tabs hidden">
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_1_select" href="#">Covariable</a></li>
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_2_select" href="#">Definición</a></li>
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_3_select" href="#">Avanzadas</a></li>
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_4_select" href="#">Def operativa (opcional)</a></li>
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_5_select" href="#">Comentarios</a></li>
+                                            
+                                        </ul>
                                     </div>
-                                </div>
                             </div>
-                            <!-- fin de bloque contenido covariables -->
-                            
-                            
+                            <div class="row padded">
+                                    <div class="col-xs-12">
+                                        <!-- este bloque esta siempre oculto
+                                        pero sirve para almacenar el contenido que se añadira a 
+                                        cada covariable en la funcion javascript: addCovariable(target)
+                                        los elementos de formulario son marcados con clase .covariable-cambiante
+                                        para que sus ids sean asignados dinámicamente después de ser creados
+                                        -->
+                                        <div id="bloqueContenidoCovariables" style="display:none">
+                                            <div id="covariables_1_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_1</span>
+                                                <div class="row padded">
+                                                    <div class="form-group">
+                                                        <label for="formNombreCovariable_xxx">Nombre de la covariable </label>
+                                                        <input id="formNombreCovariable_xxx" type="text" class="form-control name-covariable input-normalizado"></input>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="formSexo">La covariable es:</label>
+                                                        <select id="formTipoCovariable_xxx" class="form-control covariable-cambiante">
+                                                            <option value="diagnostico" selected>Un diagnóstico</option>
+                                                            <option value="farmaco">El uso de un fármaco</option>
+                                                            <option value="tabaco">Tabaquismo</option>
+                                                            <option value="alcohol">Consumo de alcohol</option>
+                                                            <option value="imc">Índice de masa corporal</option>
+                                                        </select>
+                                                    </div>
+                                                    <button id="formBorrarCovariable_xxx" class="btn btn-danger" >Borrar covariable</button>
+                                                </div>
+                                            </div>
+                                            <div id="covariables_2_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_2</span>
+                                                <div class="row padded covariable-diagnostico">
+                                                    <div class="form-group">
+                                                        <label for="formDefinicionCovariableDiagnostico_xxx">Defina la covariable diagnóstica</label>
+                                                        <textarea id="formYyy" class="form-control" rows="6" maxlength="1500"></textarea>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                                <div class="row padded covariable-farmaco hidden">
+                                                   <div class="form-group">
+                                                       <label for="formDefinicionCovariableFarmaco_xxx">Defina la covariable de uso de fármaco</label>
+                                                       <textarea id="formDefinicionCovariableFarmaco_xxx" class="form-control" rows="6" maxlength="1500"></textarea>
+                                                   </div>
+                                                
+                                                </div>
+                                                
+                                                <div class="row padded covariable-otros hidden">
+                                                   <div class="form-group">
+                                                       <div>La definición de la covariable será la predefinida en BIFAP. Consulte la ayuda para conocer esa definición. Si tiene experiencia utilizando BIFAP y desea una definición alternativa descríbala en la sección: "Definición operativa".</div>
+                                                   </div>
+                                                
+                                                </div>
+                                                
+                                            </div>
+                                            <div id="covariables_3_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_3</span>
+                                                <div class="row padded covariable-avanzadas-diagnostico-tratamiento">
+                                                    <div id="" class="form-group">
+                                                        Buscar la covariable:
+                                                        <div>
+                                                            <input type="radio" name="rangoTemporalCovariable_xxx" id="" value="ever" checked> en cualquier momento antes de la fecha del evento.
+                                                        </div>
+                                                        <div>
+                                                            <input type="radio" name="rangoTemporalCovariable_xxx" id="" value="recent"> solo en los <input id="rangoTemporalDiasCovariable_xxx" type="text" value="30" size="2"> días previos a la fecha del evento.
+                                                        </div>
+                                                        *En ambos casos se ofrecerá la fecha más cercana al evento principal
+            
+                                                    </div>
+                                                </div>
+                                                <div class="row padded covariable-avanzadas-otros hidden">
+                                                    <div class="form-group">
+                                                        No existen opciones avanzadas para este tipo de covariable.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="covariables_4_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_4</span>
+                                                <div class="row padded covariable-operativa">
+                                                   <div class="form-group">
+                                                       <label for="formXxx">Si tiene experiencia usando datos de BIFAP puede opcionalmente describir una definición operativa más detallada</label>
+                                                       <textarea id="formYyy" class="form-control" rows="10" maxlength="1500"></textarea>
+                                                   </div>
+                                                
+                                                </div>
+                                            </div>
+                                            <div id="covariables_5_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_5</span>
+                                                <div class="row padded covariable-comentarios">
+                                                   <div class="form-group">
+                                                       <label for="formXxx">Añada comentarios adicionales sobre la definición de la covariable</label>
+                                                       <textarea id="formYyy" class="form-control" rows="10" maxlength="1500"></textarea>
+                                                   </div>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- fin de bloque contenido covariables -->
+                                        <div id="covariables_1" class="subsection section-hidden"></div>
+                                        <div id="covariables_2" class="subsection section-hidden"></div>
+                                        <div id="covariables_3" class="subsection section-hidden"></div>
+                                        <div id="covariables_4" class="subsection section-hidden"></div>
+                                        <div id="covariables_5" class="subsection section-hidden"></div>
+                                    
+                                    </div>
+                            </div>
                         </div>
-
-                        <div id="covariables_1" class="subsection section-hidden"></div>
-                        <div id="covariables_2" class="subsection section-hidden"></div>
-                        <div id="covariables_3" class="subsection section-hidden"></div>
-                        <div id="covariables_4" class="subsection section-hidden"></div>
-                        <div id="covariables_5" class="subsection section-hidden"></div>
-
-                            
-
-
+                    </div>
                 </div>
                 
                 
@@ -1018,6 +1061,7 @@
                         </div>
                         
                         <div id="analisis_1" class="subsection section-hidden">
+                            <span class="ref">ref: analisis_1</span>
                             <div class="row padded">
                                 <div class="form-group">
                                     <div class="form-group">
@@ -1086,6 +1130,7 @@
                         </div>
                         
                         <div id="analisis_2" class="subsection section-hidden">
+                            <span class="ref">ref: analisis_2</span>
                             <div class="row padded">
                                 <div class="form-group">
                                     <div>Calcular incidencia del evento en la cohorte
@@ -1123,6 +1168,7 @@
                         </div>
                         
                         <div id="analisis_3" class="subsection section-hidden">
+                            <span class="ref">ref: analisis_3</span>
                             <div class="row padded">
                                 
                                 <div class="form-group">
@@ -1160,6 +1206,7 @@
                         </div>
                         
                         <div id="analisis_4" class="subsection section-hidden">
+                            <span class="ref">ref: analisis_4</span>
                             <div class="row padded">
                                 <label for="otroCalculoDetalles">Describa otros análisis adicionales de manera opcional</label>
                                 <textarea id="otroCalculoDetalles" class="form-control" rows="10" maxlength="1500"></textarea>
@@ -1187,6 +1234,7 @@
                         </div>
                         
                         <div id="limitaciones_1" class="subsection section-hidden">
+                            <span class="ref">ref: limitaciones_1</span>
                             <div class="row padded">
                                 
                                 <div class="form-group">
@@ -1197,7 +1245,7 @@
                             </div>
                         </div>
                 </div>
-                
+<!-- CRONOGRAMA   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->                  
                 <div id="cronograma" class="section section-hidden">
 
                     <div class="row padded">
@@ -1209,6 +1257,7 @@
                     </div>
                     
                     <div id="cronograma_1" class="subsection section-hidden">
+                        <span class="ref">ref: cronograma_1</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -1220,6 +1269,7 @@
                     </div>
                     
                 </div>
+<!-- BIBLIOGRAFIA   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->                 
                 <div id="bibliografia" class="section section-hidden">
                     <div class="row padded">
                         <h3>Bibliografía<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_09-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
@@ -1230,6 +1280,7 @@
                     </div>
                     
                     <div id="bibliografia_1" class="subsection section-hidden">
+                        <span class="ref">ref: bibliografia_1</span>
                         <div class="row padded">
                             
                             <div class="form-group">
@@ -1245,6 +1296,58 @@
 
 <!-- MODALS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
+                <div class="modal fade" id="addCovariableModal" tabindex="-1" role="dialog" aria-labelledby="addCovariableModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addDiagnosisModalLabel">Añadir covariable</h4>
+                      </div>
+                      <div class="modal-body">
+                          <span class="ref">ref: añadir_covariable_1</span>
+                        <div class="form-group">
+                            <label for="modalNombreCovariable">Nombre de la covariable </label>
+                            <input id="modalNombreCovariable" type="text" class="form-control input-normalizado"></input>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="formSexo">La covariable es:</label>
+                            <select id="modalTipoCovariable" class="form-control covariable-cambiante">
+                                <option value="diagnostico" selected>Un diagnóstico</option>
+                                <option value="farmaco">El uso de un fármaco</option>
+                                <option value="tabaco">Tabaquismo</option>
+                                <option value="alcohol">Consumo de alcohol</option>
+                                <option value="imc">Índice de masa corporal</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id= "addCovariable" type="button" class="btn btn-primary">Añadir</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="delCovariableModal" tabindex="-1" role="dialog" aria-labelledby="delCovariableModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addDrugModalLabel">Eliminar covariable <span class="nombreCovariableParaBorrar"></span></h4>
+                      </div>
+                      <div class="modal-body">
+                          <span class="ref">ref: eliminar_covariable_1</span>
+                        <h4>¿Está seguro de que quiere eliminar la covariable <span class="nombreCovariableParaBorrar"></span>? Se perderán todos los datos introducidos sobre esta covariable de manera definitiva.</h4>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id= "remove_covariable_button" covariableParaBorrar="" type="button" class="btn btn-danger">Eliminar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
 
                 <!-- Modal -->
                 <div class="modal fade" id="addDiagnosisModal" tabindex="-1" role="dialog" aria-labelledby="addDiagnosisModalLabel">
@@ -1255,6 +1358,7 @@
                         <h4 class="modal-title" id="addDiagnosisModalLabel">Añadir diagnóstico</h4>
                       </div>
                       <div class="modal-body">
+                          <span class="ref">ref: añadir_diagnostico_1</span>
                         <input id="anadirDiagnosticoInput" class="form-control" type="text"></input>
                       </div>
                       <div class="modal-footer">
@@ -1275,6 +1379,7 @@
                         <h4 class="modal-title" id="addDrugModalLabel">Añadir fármaco</h4>
                       </div>
                       <div class="modal-body">
+                          <span class="ref">ref: añadir_farmaco_1</span>
                         <input id="anadirFarmacoInput" class="form-control" type="text"></input>
                       </div>
                       <div class="modal-footer">

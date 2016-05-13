@@ -5,13 +5,13 @@ textarea {
 .fixed-height {
     height: 500px;
     background-color: #d9d9d9;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .fixed-height-col {
     height: 480px;
     background-color: #d9d9d9;
-    overflow: scroll;
+    overflow: auto;
 }
 
 
@@ -43,4 +43,14 @@ textarea {
 
 .help-button {
     cursor: help;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+.ref {
+    font-size: 0.8em;
+    font-style: italic;
+    background-color: yellow;
 }
