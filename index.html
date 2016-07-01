@@ -20,6 +20,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        
+        <link href="https://file.myfontastic.com/mnEaDyrxtBPxRTfG7ZvwSE/icons.css" rel="stylesheet">
+        
         <script src="./app.js"></script>
         <link rel="stylesheet" href="./protocolo.css">
     </head>
@@ -437,14 +440,9 @@
                             <div class="panel panel-default" style="margin-top: 50px; padding: 10px;">
                                 <div ng-repeat="covariable in viewCtrl.protocolo.covariables">
                                     <div class="form-inline">
+                                        <span style="font-size: 2em" ng-class="{'icon-user-md': covariable.tipo == 'diagnostico', 'icon-pill': covariable.tipo == 'farmaco', 'glyphicon glyphicon-briefcase': covariable.tipo != 'diagnostico' && covariable.tipo != 'farmaco'}"></span>
                                        <input ng-model="covariable.nombre" type="text" class="form-control"></input>
-                                       <select class="form-control" ng-model="covariable.tipo">
-                                           <option value="diagnostico">Un diagnóstico</option>
-                                           <option value="farmaco">El uso de un fármaco</option>
-                                           <option value="tabaco">Tabaquismo</option>
-                                           <option value="alcohol">Consumo de alcohol</option>
-                                           <option value="imc">Índice de masa corporal</option>
-                                       </select>
+                                       
                                        
                                        <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
                                     </div>
