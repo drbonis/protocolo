@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Formulario de protocolo de estudio Caso-Control de BIFAP</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+   
+   <!-- Optional theme -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+   
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<!-- Typeahead https://cdnjs.com/libraries/typeahead.js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="protocolo.css">
+    <!-- Arregla problemas con typeahead en modal from: https://github.com/hyspace/typeahead.js-bootstrap3.less/blob/master/typeahead.css -->
+    <!--<link rel="stylesheet" type="text/css" href="typeahead_bootstrap3_fix.css">-->
+    
+    
+    <!-- carga la lista de diagnosticos CIAP4 -->
+    <!--<script src="./ciaps4.json.js?m"></script>-->
+
+    
+  </head>
+
+  <body>
+
+
+<!-- TEXTOS AYUDA ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+<div>
+    <!-- Modal -->
+    <div class="modal fade" id="ayuda_01-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Datos generales</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 01-00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="ayuda_01-01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Título del proyecto</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 01-01</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="ayuda_01-02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Resumen del proyecto</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 01-02</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="ayuda_01-03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Antecedentes del proyecto</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 01-03</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="ayuda_02-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Población a estudio</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 02-00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="ayuda_03-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Evento a estudio</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 03-00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="ayuda_04-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Exposición principal</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 04-00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="ayuda_05-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Covariables</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 05-00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="ayuda_06-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Plan de Análisis</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 06-00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="ayuda_07-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Limitaciones del estudio</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 07-00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="ayuda_08-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Cronograma del estudio</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 08-00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="modal fade" id="ayuda_09-00" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ayuda:: Bibliografía</h4>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="modal-footer">
+              <span class="ref">referencia: 09-00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    
+    
+    
+
+    <div class="container-fluid">
+
+        <div class="page-header">
+            <h4>Protocolo de diseño Caso-Control BIFAP v0.1</h4>
+        </div>
+        <div class="row fixed-height padded">
+         <div class="col-xs-12">
+            <div class="col-xs-3" role="navigation">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="sect_select"><a id="general_select" href="#">General</a></li><div></div>
+                    <li class="sect_select"><a id="poblacion_select"  href="#">Población</a></li><div></div>
+                    <li class="sect_select"><a id="evento_select"  href="#">Evento</a></li>
+                    <li class="sect_select"><a id="exposicion_select"  href="#">Exposición ppal</a></li>
+                    <li class="sect_select"><a id="confusores_select"  href="#">Covariables</a></li>
+                    <li class="sect_select"><a id="analisis_select"  href="#">Análisis</a></li>
+                    <li class="sect_select"><a id="limitaciones_select"  href="#">Limitaciones</a></li>
+                    <li class="sect_select"><a id="cronograma_select"  href="#">Cronograma</a></li>
+                    <li class="sect_select"><a id="bibliografia_select"  href="#">Bibliografía</a></li>
+                </ul>
+
+            </div>
+            <div class="col-xs-9 fixed-height-col">
+                
+                <form class="form" id="miFormulario">
+  
+<!-- GENERAL ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+                
+                <div id="general" class="section section-hidden">
+                    
+                    <div class="row padded">
+                        <h3>Datos generales <button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_01-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
+                        <!-- Button trigger modal -->
+                        
+                        
+                        
+                        
+                        
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="subsect_select active"><a id="general_1_select" href="#">Título y resumen</a></li>
+                            <li role="presentation" class="subsect_select"><a id="general_2_select" href="#">Antecedentes</a></li>
+                            <li role="presentation" class="subsect_select"><a id="general_3_select" href="#">Hipótesis y Objetivos</a></li>
+                            <li role="presentation" class="subsect_select"><a id="general_4_select" href="#">Pacientes y métodos</a></li>
+                            <li role="presentation" class="subsect_select"><a id="general_5_select" href="#">Diseño</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+
+                    <div id="general_1" class="subsection section-hidden">
+                        <span class="ref">ref: general_1</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formTituloDelProyecto">Título del proyecto <button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_01-01"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></label>
+                                <input id="formTituloDelProyecto" type="text" class="form-control"></input>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="formResumenDelProyecto">Resumen del proyecto <button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_01-02"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></label>
+                                <textarea id="formResumenDelProyecto" class="form-control" rows="10" maxlength="1500"></textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="general_2" class="subsection section-hidden">
+                        <span class="ref">ref: general_2</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formAntecedentes">Antecedentes <button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_01-03"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></label>
+                                <textarea id="formAntecedentes" class="form-control" rows="10" maxlength="6000"></textarea>
+                            </div>
+                            
+ 
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="general_3" class="subsection section-hidden">
+                        <span class="ref">ref: general_3</span>
+                        <div class="row padded">
+                            <div class="form-group">
+                                <label for="formHipotesis">Hipótesis principal</label>
+                                <input id="formHipotesis" type="text" class="form-control"></input>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="formObjetivos">Objetivos del proyecto</label>
+                                <textarea id="formObjetivos" class="form-control" rows="10" maxlength="1000"></textarea>
+                            </div>                            
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="general_4" class="subsection section-hidden">
+                        <span class="ref">ref: general_4</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formMetodos">Pacientes y métodos</label>
+                                <textarea id="formMetodos" class="form-control" rows="10" maxlength="6000"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="general_5" class="subsection section-hidden">
+                        <span class="ref">ref: general_5</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formDiseno">Diseño del estudio</label>
+                                <textarea id="formDiseno" class="form-control" rows="10" maxlength="6000"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                        
+                </div>
+                
+<!-- POBLACION :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+                
+                
+                <div id="poblacion" class="section section-hidden">
+                    <div class="row padded">
+                        <h3>Población a estudio<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_02-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="subsect_select active"><a id="poblacion_1_select" href="#">Periodo</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="poblacion_2_select" href="#">Inclusión</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="poblacion_3_select" href="#">Exclusión</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="poblacion_4_select" href="#">Comentarios</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div id="poblacion_1" class="subsection section-hidden">
+                        <span class="ref">ref: poblacion_1</span>
+                        <div class="row padded">
+                            <h4>Periodo de estudio</h4>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                    <label class="control-label">Desde 1 de enero de:</label>
+                                    </div>
+                                    <div class="col-xs-2">
+                                    <input id="formPeriodoIni" class="form-control" type="number" max="2013" min="2001" value="2005"/>            
+                                    </div>
+                                    <div class="col-xs-3">
+                                    <label class="control-label">Hasta 31 de diciembre de:</label>
+                                    </div>
+                                    <div class="col-xs-2">
+                                    <input id="formPeriodoEnd" class="form-control" type="number" max="2014" min="2002" value="2010"/>                
+                                    </div>
+                                </div>
+                                
+                                <h4>Rango de edad</h4>
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                    <label class="control-label">Edad mínima:</label>
+                                    </div>
+                                    <div class="col-xs-2">
+                                    <input id="formEdadMin" class="form-control" type="number" max="109" min="0" value="0"/>            
+                                    </div>
+                                    <div class="col-xs-3">
+                                    <label class="control-label">Edad máxima:</label>
+                                    </div>
+                                    <div class="col-xs-2">
+                                    <input id="formEdadMax" class="form-control" type="number" max="109" min="0" value="109"/>                
+                                    </div>
+                                </div>
+
+                                <label class="control-label" for="formSexo">Sexo</label>
+                                <select id="formSexo" class="form-control">
+                                  <option selected>Ambos sexos</option>
+                                  <option>Solamente Hombres</option>
+                                  <option>Solamente Mujeres</option>
+                                </select>
+                                
+
+                                
+                            </div>
+                            
+
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="poblacion_2" class="subsection section-hidden">
+                        <span class="ref">ref: poblacion_2</span>
+                        <div class="row padded">
+                            <h3>Criterios de inclusión</h3>
+                            <div id="botonesInclusion">
+                            <button id="addInclusionDiagnosisButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDiagnosisModal">Añadir diagnóstico</button>
+                            <button id="addInclusionDrugButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDrugModal">Añadir fármaco</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="formInclusionDiagnosticos">Lista de diagnósticos de inclusión</label>
+                                <div id="formInclusionDiagnosticosList"></div>
+                                <input id="formInclusionDiagnosticos" type="hidden" class="form-control"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="formInclusionFarmacos">Lista de fármacos de inclusión</label>
+                                <div id="formInclusionFarmacosList"></div>
+                                <input id="formInclusionFarmacos" type="hidden" class="form-control"></input>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="poblacion_3" class="subsection section-hidden">
+                        <span class="ref">ref: poblacion_3</span>
+                        <div class="row padded">
+                            
+                            <h3>Criterios de exclusión</h3>
+                            <div id="botonesExclusion">
+                            <button id="addExclusionDiagnosisButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDiagnosisModal">Añadir diagnóstico</button>
+                            <button id="addExclusionDrugButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDrugModal">Añadir fármaco</button>
+                            </div>
+          
+                            <div class="form-group">
+                                <label for="formExclusionDiagnosticos">Lista de diagnósticos de exclusión</label>
+                                <div id="formExclusionDiagnosticosList"></div>
+                                <input id="formExclusionDiagnosticos" type="hidden" class="form-control"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="formExclusionFarmacos">Lista de fármacos de exclusión</label>
+                                <div id="formExclusionFarmacosList"></div>
+                                <input id="formExclusionFarmacos" type="hidden" class="form-control"></input>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    
+                    <div id="poblacion_4" class="subsection section-hidden">
+                        <span class="ref">ref: poblacion_4</span>
+                        <div class="row padded">
+
+                            <div class="form-group">
+                                <label for="formPoblacionComentarios">Comentarios adicionales sobre población a estudio</label>
+                                <textarea id="formPoblacionComentarios" class="form-control" rows=10 maxlength="1500"></textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                   
+                </div>
+                
+<!-- EVENTO :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::   -->
+                
+                <div id="evento" class="section section-hidden">
+                    <div class="row padded">
+                        <h3>Evento (caso)<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_03-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="subsect_select active"><a id="evento_1_select" href="#">Tipo de evento</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="evento_2_select" href="#">Definición</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="evento_3_select" href="#">Opciones avanzadas</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="evento_4_select" href="#">Definición operativa (opcional)</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="evento_5_select" href="#">Comentarios</a></li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div id="evento_1" class="subsection section-hidden">
+                        <span class="ref">ref: evento_1</span>
+                        <div class="row padded">
+                            <div class="form-group">
+                                <label class="control-label" for="formSexo">El evento (caso) a estudiar tiene que ver con:</label>
+                                <select id="formTipoEvento" class="form-control">
+                                    <option value="diagnostico" selected>Un diagnóstico</option>
+                                    <option value="farmaco">El uso de un fármaco</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div id="evento_2" class="subsection section-hidden">
+                        <span class="ref">ref: evento_2</span>
+                        <div class="row padded evento-diagnostico">
+                            <div class="form-group">
+                                <label for="formXxx">Escriba una definición clínica del evento (definición de caso) que quiere incluir en el estudio</label>
+                                <textarea id="formYyy" class="form-control" rows="6" maxlength="1500"></textarea>
+                            </div>
+
+                            
+                            <div class="form-group">
+                                <label for="formEventoDiagnosticos">Lista de diagnósticos</label><button id="addEventoDiagnosisButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDiagnosisModal">Añadir diagnóstico</button>
+                                <div>Se considerará al paciente como caso en el momento en que tenga cualquiera de los siguientes diagnósticos:</div>
+                                <div id="formEventoDiagnosticosList"></div>
+                                <input id="formEventoDiagnosticos" type="hidden" class="form-control"></input>
+                            </div>
+
+                        </div>
+                        
+                        
+                        <div class="row padded evento-farmaco hidden">
+                            <div id="addEventoFarmacoOptions" class="form-group">
+                                <label for="addEventoDrugButton">Lista de fármacos</label>
+                                <button id="addEventoDrugButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDrugModal">Añadir fármaco</button>
+                                <div>Se considerará como caso al paciente cuando reciba la primera receta de cualquiera de los siguientes fármacos:</div>
+                                <div id="formEventoDrugsList"></div>
+                                <input id="formEventoFarmaco" type="hidden" class="form-control"></input>
+                            </div>
+
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    <div id="evento_3" class="subsection section-hidden">
+                        <span class="ref">ref: evento_3</span>
+                        <div class="row padded evento-diagnostico">
+
+                            
+                            <div class="form-group">
+                                <div>La definición requiere datos adicionales (analíticas, derivaciones a especialistas...)
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoUsaDGP" class="eventoUsaDGP" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoUsaDGP" class="eventoUsaDGP default" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                            </div>        
+                            
+                            <div id="eventoUsaDGPOpciones" class="form-group hidden">
+                                <label for="eventoUsaDGPDetalles">Describa los criterios para definir el evento con datos adicionales (analíticas, derivaciones, etc)</label>
+                                <textarea id="eventoUsaDGPDetalles" class="form-control" rows="6" maxlength="1500"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div>La definición de caso incluye el uso de algún fármaco
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoUsaFarmaco" class="eventoUsaFarmaco" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoUsaFarmaco" class="eventoUsaFarmaco default" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                            </div>
+                            
+                            <div id="addEventoDiagnosisByDrugOptions" class="form-group hidden">
+                                <label for="addEventoDiagnosisByDrugButton">Lista de fármacos</label>
+                                <button id="addEventoDiagnosisByDrugButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDrugModal">Añadir fármaco</button>
+                                <div>Se considerará como caso cuando el paciente reciba la primera receta de cualquiera de los siguientes fármacos:</div>
+                                <div id="formEventoDiagnosisByDrugsList"></div>
+                                <input id="formEventoDiagnosisByDrugs" type="hidden" class="form-control"></input>
+                            </div>
+
+
+
+
+                           
+                            
+                        </div>
+                        
+                        <div class="row padded evento-farmaco hidden">
+                            <div class="form-group">
+                                <div>¿Se requiere clasificación de los casos según dosis?
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoRequiereDosis" class="eventoRequiereDosis" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoRequiereDosis" class="eventoRequiereDosis default" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                            </div>
+                            
+                            <div id="formEventoDosisOpciones" class="form-group hidden">
+                                <select id="formEventoDosisOpcionesSelect"  class="form-control">
+                                    <option value="ddd" selected>Según valores oficiales de Dosis Diaria Definida</option>
+                                    <option value="manual">Según puntos de corte definidos manualmente para cada fármaco</option>
+                                    <option value="otros">Otros criterios</option>
+                                </select>
+                                
+                                
+                                    <div id="formEventoDosisManualOpciones" class="form-group hidden">
+                                        <label for="formEventoDosisManualOpcionesInput">Especifique los puntos de corte para dosis baja, intermedia y alta de cada fármaco:</label>
+                                        <textarea id="formEventoDosisManualOpcionesInput" class="form-control" rows="4" maxlength="1500"></textarea>
+                                    </div>
+                                    
+                                    <div id="formEventoDosisOtrosOpciones" class="form-group hidden">
+                                        <label for="formEventoDosisOtrosOpcionesInput">Especifique los criterios de estratificación por dosis para cada fármaco:</label>
+                                        <textarea id="formEventoDosisOtrosOpcionesInput" class="form-control" rows="4" maxlength="1500"></textarea>
+                                    </div>
+                                
+
+                                
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <div>¿Se requiere clasificación de los casos según duración del tratamiento?
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoRequiereDuracion" class="eventoRequiereDuracion" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="eventoRequiereDuracion" class="eventoRequiereDuracion default" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                            </div>
+                            
+                            <div id="formEventoDuracionOpciones" class="form-group hidden">
+                                <div>
+                                    <input type="radio" name="eventoDuracion" id="eventoDuracionSi" value="continua"> <strong>Duración contínua:</strong> desde la primera prescripción de estudio se van encadenando las duraciones de todas las prescripciones siguientes mientras entre el final de una y el principio de la siguiente no pasen más de <input id="formEventoDuracionGAP" type="text" value="30" size="2"> días (gap).
+                                </div>
+                                <div>
+                                    <input type="radio" name="eventoDuracion" id="eventoDuracionNo" value="acumulada"> <strong>Duración acumulada:</strong> tiempo total que ha estado utilizando el fármaco/s de interés independientemente de que sea en contínuo o no.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="evento_4" class="subsection section-hidden">
+                        <span class="ref">ref: evento_4</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formXxx">Si tiene experiencia usando datos de BIFAP puede opcionalmente describir una definición operativa más detallada</label>
+                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                    
+                    
+                    <div id="evento_5" class="subsection section-hidden">
+                        <span class="ref">ref: evento_5</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formXxx">Añada comentarios adicionales sobre la definición del evento de interés</label>
+                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+                
+<!-- EXPOSICION :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  -->
+                
+                <div id="exposicion" class="section section-hidden">
+                    <div class="row padded">
+                        <h3>Exposición principal (factor de riesgo)<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_04-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="subsect_select active"><a id="exposicion_1_select" href="#">Tipo de exposición</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="exposicion_2_select" href="#">Definición</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="exposicion_3_select" href="#">Opciones avanzadas</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="exposicion_4_select" href="#">Definición operativa (opcional)</a></li>
+                            <li role="presentation" class="subsect_select active"><a id="exposicion_5_select" href="#">Comentarios</a></li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div id="exposicion_1" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_1</span>
+                        <div class="row padded">
+                            <div class="form-group">
+                                <label class="control-label" for="formSexo">La exposición principal (factor de riesgo) a estudiar tiene que ver con:</label>
+                                <select id="formTipoExposicion" class="form-control">
+                                    <option value="diagnostico" selected>Un diagnóstico</option>
+                                    <option value="farmaco">El uso de un fármaco</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div id="exposicion_2" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_2</span>
+                        <div class="row padded exposicion-diagnostico">
+                            <div class="form-group">
+                                <label for="formXxx">Escriba una definición clínica de la exposición que quiere incluir en el estudio</label>
+                                <textarea id="formYyy" class="form-control" rows="6" maxlength="1500"></textarea>
+                            </div>
+
+                            
+                            <div class="form-group">
+                                <label for="formExposicionDiagnosticos">Lista de diagnósticos</label><button id="addExposicionDiagnosisButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDiagnosisModal">Añadir diagnóstico</button>
+                                <div>Se considerará al paciente como expuesto en el momento en que tenga cualquiera de los siguientes diagnósticos:</div>
+                                <div id="formExposicionDiagnosticosList"></div>
+                                <input id="formExposicionDiagnosticos" type="hidden" class="form-control"></input>
+                            </div>
+
+                        </div>
+                        
+                        <div class="row padded exposicion-farmaco hidden">
+                            <div id="addExposicionFarmacoOptions" class="form-group">
+                                <label for="addExposicionDrugButton">Lista de fármacos</label>
+                                <button id="addExposicionDrugButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDrugModal">Añadir fármaco</button>
+                                <div>Se considerará como caso al paciente cuando reciba la primera receta de cualquiera de los siguientes fármacos:</div>
+                                <div id="formExposicionDrugsList"></div>
+                                <input id="formExposicionFarmaco" type="hidden" class="form-control"></input>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="exposicion_3" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_3</span>
+                        <div class="row padded exposicion-diagnostico">
+
+                            
+                            <div class="form-group">
+                                <div>La definición requiere datos adicionales (analíticas, derivaciones a especialistas...)
+                                <label class="radio-inline">
+                                  <input type="radio" name="exposicionUsaDGP" class="exposicionUsaDGP" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="exposicionUsaDGP" class="exposicionUsaDGP default" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                            </div>        
+                            
+                            <div id="exposicionUsaDGPOpciones" class="form-group hidden">
+                                <label for="exposicionUsaDGPDetalles">Describa los criterios para definir la exposición con datos adicionales (analíticas, derivaciones, etc)</label>
+                                <textarea id="exposicionUsaDGPDetalles" class="form-control" rows="6" maxlength="1500"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div>La definición de exposición como diagnóstico incluye el uso de algún fármaco
+                                <label class="radio-inline">
+                                  <input type="radio" name="exposicionUsaFarmaco" class="exposicionUsaFarmaco" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="exposicionUsaFarmaco" class="exposicionUsaFarmaco default" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                            </div>
+                            
+                            <div id="addExposicionDrugOptions" class="form-group hidden">
+                                <label for="addExposicionDiagnosisByDrugButton">Lista de fármacos</label>
+                                <button id="addExposicionDiagnosisByDrugButton" type="button" class="btn btn-default botones-listas" data-toggle="modal" data-target="#addDrugModal">Añadir fármaco</button>
+                                <div>Se considerará como expuesto al paciente cuando reciba la primera receta de cualquiera de los siguientes fármacos:</div>
+                                <div id="formExposicionDiagnosisByDrugsList"></div>
+                                <input id="formExposicionDiagnosisByDrugs" type="hidden" class="form-control"></input>
+                            </div>
+                        </div>
+                        
+                        <div class="row padded exposicion-farmaco hidden">
+                            <div class="form-group">
+                                <div>¿Se requiere clasificación de los expuestos según dosis?
+                                <label class="radio-inline">
+                                  <input type="radio" name="exposicionRequiereDosis" class="exposicionRequiereDosis" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="exposicionRequiereDosis" class="exposicionRequiereDosis default" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                            </div>
+                            
+                            <div id="formExposicionDosisOpciones" class="form-group hidden">
+                                <select id="formExposicionDosisOpcionesSelect"  class="form-control">
+                                    <option value="ddd" selected>Según valores oficiales de Dosis Diaria Definida</option>
+                                    <option value="manual">Según puntos de corte definidos manualmente para cada fármaco</option>
+                                    <option value="otros">Otros criterios</option>
+                                </select>
+                                
+                                
+                                    <div id="formExposicionDosisManualOpciones" class="form-group hidden">
+                                        <label for="formExposicionDosisManualOpcionesInput">Especifique los puntos de corte para dosis baja, intermedia y alta de cada fármaco:</label>
+                                        <textarea id="formExposicionDosisManualOpcionesInput" class="form-control" rows="4" maxlength="1500"></textarea>
+                                    </div>
+                                    
+                                    <div id="formExposicionDosisOtrosOpciones" class="form-group hidden">
+                                        <label for="formExposicionDosisOtrosOpcionesInput">Especifique los criterios de estratificación por dosis para cada fármaco:</label>
+                                        <textarea id="formExposicionDosisOtrosOpcionesInput" class="form-control" rows="4" maxlength="1500"></textarea>
+                                    </div>
+                                
+
+                                
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <div>¿Se requiere clasificación de los expuestos según duración del tratamiento?
+                                <label class="radio-inline">
+                                  <input type="radio" name="exposicionRequiereDuracion" class="exposicionRequiereDuracion" value="Si"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="exposicionRequiereDuracion" class="exposicionRequiereDuracion default" value="No" checked="checked"> No
+                                </label>
+                                </div>
+                            </div>
+                            
+                            <div id="formExposicionDuracionOpciones" class="form-group hidden">
+                                <div>
+                                    <input type="radio" name="exposicionDuracion" id="exposicionDuracionSi" value="continua" checked="checked"> <strong>Duración contínua:</strong> desde la primera prescripción de estudio se van encadenando las duraciones de todas las prescripciones siguientes mientras entre el final de una y el principio de la siguiente no pasen más de <input id="formEvxposicionDuracionGAP" type="text" value="30" size="2"> días (gap).
+                                </div>
+                                <div>
+                                    <input type="radio" name="exposicionDuracion" id="exposicionDuracionNo" value="acumulada"> <strong>Duración acumulada:</strong> tiempo total que ha estado utilizando el fármaco/s de interés independientemente de que sea en contínuo o no.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="exposicion_4" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_4</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formXxx">Si tiene experiencia usando datos de BIFAP puede opcionalmente describir una definición operativa más detallada</label>
+                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                    
+                    
+                    <div id="exposicion_5" class="subsection section-hidden">
+                        <span class="ref">ref: exposicion_5</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formXxx">Añada comentarios adicionales sobre la definición de la exposición principal</label>
+                                <textarea id="formYyy" class="form-control" rows="16" maxlength="1500"></textarea>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                
+                
+<!-- CONFUSORES ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+                
+                <div id="confusores" class="section section-hidden">
+                    <div class="row padded">
+                        <div class="col-xs-12 fixed-height-col">
+                            <div class="row padded">
+                                <div class="col-xs-12">
+                                    <h3>Covariables / Variables confusoras<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_05-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button><span class="ref">ref: covariables_0</span></h3>
+
+                                    <div class="form-group row">
+                                        <div class="col-xs-2">
+                                            <button class="btn btn-info" id="addCovariableLauncher" data-toggle="modal" data-target="#addCovariableModal">Añadir</button>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <select id="listadoCovariables" class="form-control hidden">
+                                            
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    
+                                        
+                                </div>
+                            </div>                                    
+                            <div class="row padded">
+                                    <div class="col-xs-12">
+    
+                                        <ul id="subseccionesCovariable" class="nav nav-tabs hidden">
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_1_select" href="#">Covariable</a></li>
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_2_select" href="#">Definición</a></li>
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_3_select" href="#">Avanzadas</a></li>
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_4_select" href="#">Def operativa (opcional)</a></li>
+                                            <li role="presentation" class="subsect_select active"><a id="covariables_5_select" href="#">Comentarios</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                            </div>
+                            <div class="row padded">
+                                    <div class="col-xs-12">
+                                        <!-- este bloque esta siempre oculto
+                                        pero sirve para almacenar el contenido que se añadira a 
+                                        cada covariable en la funcion javascript: addCovariable(target)
+                                        los elementos de formulario son marcados con clase .covariable-cambiante
+                                        para que sus ids sean asignados dinámicamente después de ser creados
+                                        -->
+                                        <div id="bloqueContenidoCovariables" style="display:none">
+                                            <div id="covariables_1_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_1</span>
+                                                <div class="row padded">
+                                                    <div class="form-group">
+                                                        <label for="formNombreCovariable_xxx">Nombre de la covariable </label>
+                                                        <input id="formNombreCovariable_xxx" type="text" class="form-control name-covariable input-normalizado"></input>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="formSexo">La covariable es:</label>
+                                                        <select id="formTipoCovariable_xxx" class="form-control covariable-cambiante">
+                                                            <option value="diagnostico" selected>Un diagnóstico</option>
+                                                            <option value="farmaco">El uso de un fármaco</option>
+                                                            <option value="tabaco">Tabaquismo</option>
+                                                            <option value="alcohol">Consumo de alcohol</option>
+                                                            <option value="imc">Índice de masa corporal</option>
+                                                        </select>
+                                                    </div>
+                                                    <button id="formBorrarCovariable_xxx" class="btn btn-danger" >Borrar covariable</button>
+                                                </div>
+                                            </div>
+                                            <div id="covariables_2_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_2</span>
+                                                <div class="row padded covariable-diagnostico">
+                                                    <div class="form-group">
+                                                        <label for="formDefinicionCovariableDiagnostico_xxx">Defina la covariable diagnóstica</label>
+                                                        <textarea id="formYyy" class="form-control" rows="6" maxlength="1500"></textarea>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                                <div class="row padded covariable-farmaco hidden">
+                                                   <div class="form-group">
+                                                       <label for="formDefinicionCovariableFarmaco_xxx">Defina la covariable de uso de fármaco</label>
+                                                       <textarea id="formDefinicionCovariableFarmaco_xxx" class="form-control" rows="6" maxlength="1500"></textarea>
+                                                   </div>
+                                                
+                                                </div>
+                                                
+                                                <div class="row padded covariable-otros hidden">
+                                                   <div class="form-group">
+                                                       <div>La definición de la covariable será la predefinida en BIFAP. Consulte la ayuda para conocer esa definición. Si tiene experiencia utilizando BIFAP y desea una definición alternativa descríbala en la sección: "Definición operativa".</div>
+                                                   </div>
+                                                
+                                                </div>
+                                                
+                                            </div>
+                                            <div id="covariables_3_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_3</span>
+                                                <div class="row padded covariable-avanzadas-diagnostico-tratamiento">
+                                                    <div id="" class="form-group">
+                                                        Buscar la covariable:
+                                                        <div>
+                                                            <input type="radio" name="rangoTemporalCovariable_xxx" id="" value="ever" checked> en cualquier momento antes de la fecha del evento.
+                                                        </div>
+                                                        <div>
+                                                            <input type="radio" name="rangoTemporalCovariable_xxx" id="" value="recent"> solo en los <input id="rangoTemporalDiasCovariable_xxx" type="text" value="30" size="2"> días previos a la fecha del evento.
+                                                        </div>
+                                                        *En ambos casos se ofrecerá la fecha más cercana al evento principal
+            
+                                                    </div>
+                                                </div>
+                                                <div class="row padded covariable-avanzadas-otros hidden">
+                                                    <div class="form-group">
+                                                        No existen opciones avanzadas para este tipo de covariable.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="covariables_4_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_4</span>
+                                                <div class="row padded covariable-operativa">
+                                                   <div class="form-group">
+                                                       <label for="formXxx">Si tiene experiencia usando datos de BIFAP puede opcionalmente describir una definición operativa más detallada</label>
+                                                       <textarea id="formYyy" class="form-control" rows="10" maxlength="1500"></textarea>
+                                                   </div>
+                                                
+                                                </div>
+                                            </div>
+                                            <div id="covariables_5_html" class="hidden" style="display:none">
+                                                <span class="ref">ref: covariables_5</span>
+                                                <div class="row padded covariable-comentarios">
+                                                   <div class="form-group">
+                                                       <label for="formXxx">Añada comentarios adicionales sobre la definición de la covariable</label>
+                                                       <textarea id="formYyy" class="form-control" rows="10" maxlength="1500"></textarea>
+                                                   </div>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- fin de bloque contenido covariables -->
+                                        <div id="covariables_1" class="subsection section-hidden"></div>
+                                        <div id="covariables_2" class="subsection section-hidden"></div>
+                                        <div id="covariables_3" class="subsection section-hidden"></div>
+                                        <div id="covariables_4" class="subsection section-hidden"></div>
+                                        <div id="covariables_5" class="subsection section-hidden"></div>
+                                    
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+<!-- ANALISIS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->                
+                
+                
+                <div id="analisis" class="section section-hidden">
+
+                        <div class="row padded">
+                            <h3>Análisis<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_06-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="subsect_select active"><a id="analisis_1_select" href="#">Selección de controles</a></li>
+                                <li role="presentation" class="subsect_select active"><a id="analisis_2_select" href="#">Estimadores a calcular</a></li>
+                                <li role="presentation" class="subsect_select active"><a id="analisis_3_select" href="#">Avanzado</a></li>
+                                <li role="presentation" class="subsect_select active"><a id="analisis_4_select" href="#">Otros</a></li>
+
+                                
+                            </ul>
+                        </div>
+                        
+                        <div id="analisis_1" class="subsection section-hidden">
+                            <span class="ref">ref: analisis_1</span>
+                            <div class="row padded">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="formTituloDelProyecto">Número de controles por caso</label>
+                                        <input id="formNumControlesPorCaso" type="number" min="1" max="10" class="form-control" value="1"></input>
+                                    </div>
+                                    <div>Se requiere emparejamiento de casos y controles
+                                        <label class="radio-inline">
+                                          <input type="radio" name="emparejamiento" class="emparejamiento default" value="Si" checked="checked"> Si
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="emparejamiento" class="emparejamiento" value="No" > No
+                                        </label>
+                                    </div>
+                                </div>        
+                                
+                                <div class="row">
+                                    <div class="col-xs-1"></div>
+                                    <div class="col-xs-10">
+                                
+                                        <div id="emparejamientoOpciones" class="form-group">
+                                            
+                                            <div class="form-group">
+                                                <div>Emparejamiento por edad
+                                                <label class="radio-inline">
+                                                  <input type="radio" name="emparejamientoEdad" class="emparejamientoEdad default" value="Si" checked="checked"> Si
+                                                </label>
+                                                <label class="radio-inline">
+                                                  <input type="radio" name="emparejamientoEdad" class="emparejamientoEdad" value="No" > No
+                                                </label>
+                                                </div>
+                                            </div> 
+                                            
+                                            <div class="form-group">
+                                                <div>Emparejamiento por sexo
+                                                <label class="radio-inline">
+                                                  <input type="radio" name="emparejamientoSexo" class="emparejamientoSexo default" value="Si" checked="checked"> Si
+                                                </label>
+                                                <label class="radio-inline">
+                                                  <input type="radio" name="emparejamientoSexo" class="emparejamientoSexo" value="No" > No
+                                                </label>
+                                                </div>
+                                            </div> 
+                                            
+                                            <div class="form-group">
+                                                <div>Emparejamiento por año calendario
+                                                <label class="radio-inline">
+                                                  <input type="radio" name="emparejamientoPeriodo" class="emparejamientoPeriodo default" value="Si"> Si
+                                                </label>
+                                                <label class="radio-inline">
+                                                  <input type="radio" name="emparejamientoPeriodo" class="emparejamientoPeriodo" value="No" checked="checked"> No
+                                                </label>
+                                                </div>
+                                            </div> 
+                                            
+                                            
+                                            <label for="emparejamientoDetalles">Otros criterios de emparejamiento</label>
+                                            <textarea id="emparejamientoDetalles" class="form-control" rows="3" maxlength="1500"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1"></div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        
+                        <div id="analisis_2" class="subsection section-hidden">
+                            <span class="ref">ref: analisis_2</span>
+                            <div class="row padded">
+                                <div class="form-group">
+                                    <div>Calcular incidencia del evento en la cohorte
+                                        <label class="radio-inline">
+                                          <input type="radio" name="incidenciaCalculo" class="incidenciaCalculo" value="Si"> Si
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="incidenciaCalculo" class="incidenciaCalculo default" value="No" checked="checked"> No
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div id="incidenciaCalculoOpciones" class="form-group hidden">
+                                    <label for="incidenciaCalculoDetalles">Indique cómo va a calcular y analizar la incidencia en la cohorte cruda</label>
+                                    <textarea id="incidenciaCalculoDetalles" class="form-control" rows="3" maxlength="1500"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div>Calcular estimadores crudos y ajustados de Odds Ratio
+                                        <label class="radio-inline">
+                                          <input type="radio" name="oddsRatioCalculo" class="oddsRatioCalculo" value="Si"> Si
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="oddsRatioCalculo" class="oddsRatioCalculo default" value="No" checked="checked"> No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="oddsRatioCalculoOpciones" class="form-group hidden">
+                                    <label for="incidenciaCalculoDetalles">Indique cómo va a realizar el cálculo y análisis de estimadores de riesgo. Incluya las categorías de referencia.</label>
+                                    <textarea id="incidenciaCalculoDetalles" class="form-control" rows="3" maxlength="1500"></textarea>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                        
+                        <div id="analisis_3" class="subsection section-hidden">
+                            <span class="ref">ref: analisis_3</span>
+                            <div class="row padded">
+                                
+                                <div class="form-group">
+                                    <div>Análisis de subgrupos
+                                        <label class="radio-inline">
+                                          <input type="radio" name="subgrupoCalculo" class="subgrupoCalculo" value="Si"> Si
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="subgrupoCalculo" class="subgrupoCalculo default" value="No" checked="checked"> No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="subgrupoCalculoOpciones" class="form-group hidden">
+                                    <label for="subgrupoCalculoDetalles">Indique cómo va a realizar el análisis de subgrupos</label>
+                                    <textarea id="subgrupoCalculoDetalles" class="form-control" rows="3" maxlength="1500"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div>Análisis de sensibilidad
+                                        <label class="radio-inline">
+                                          <input type="radio" name="sensibilidadCalculo" class="sensibilidadCalculo" value="Si"> Si
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="sensibilidadCalculo" class="sensibilidadCalculo default" value="No" checked="checked"> No
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="sensibilidadCalculoOpciones" class="form-group hidden">
+                                    <label for="sensibilidadCalculoDetalles">Indique cómo va a realizar el análisis de sensibilidad.</label>
+                                    <textarea id="sensibilidadCalculoDetalles" class="form-control" rows="3" maxlength="1500"></textarea>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                        
+                        <div id="analisis_4" class="subsection section-hidden">
+                            <span class="ref">ref: analisis_4</span>
+                            <div class="row padded">
+                                <label for="otroCalculoDetalles">Describa otros análisis adicionales de manera opcional</label>
+                                <textarea id="otroCalculoDetalles" class="form-control" rows="10" maxlength="1500"></textarea>
+                            </div>
+                        </div>
+                        
+
+                </div>
+                
+                
+                
+                
+                
+<!-- LIMITACIONES ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->                
+                
+                
+                <div id="limitaciones" class="section section-hidden">
+
+                        <div class="row padded">
+                            <h3>Limitaciones<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_07-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="subsect_select active"><a id="limitaciones_1_select" href="#">Limitaciones del estudio</a></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div id="limitaciones_1" class="subsection section-hidden">
+                            <span class="ref">ref: limitaciones_1</span>
+                            <div class="row padded">
+                                
+                                <div class="form-group">
+                                    <label for="formLimitaciones">Señale las potenciales limitaciones del protocolo de estudio</label>
+                                    <textarea id="formLimitaciones" class="form-control" rows="10" maxlength="1500"></textarea>
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+<!-- CRONOGRAMA   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->                  
+                <div id="cronograma" class="section section-hidden">
+
+                    <div class="row padded">
+                        <h3>Cronograma<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_08-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="subsect_select active"><a id="cronograma_1_select" href="#">Cronograma del estudio</a></li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div id="cronograma_1" class="subsection section-hidden">
+                        <span class="ref">ref: cronograma_1</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formLimitaciones">Describa un cronograma aproximado del estudio</label>
+                                <textarea id="formLimitaciones" class="form-control" rows="10" maxlength="1500"></textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+<!-- BIBLIOGRAFIA   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->                 
+                <div id="bibliografia" class="section section-hidden">
+                    <div class="row padded">
+                        <h3>Bibliografía<button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_09-00"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></h3>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" class="subsect_select active"><a id="bibliografia_1_select" href="#">Bibliografía</a></li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div id="bibliografia_1" class="subsection section-hidden">
+                        <span class="ref">ref: bibliografia_1</span>
+                        <div class="row padded">
+                            
+                            <div class="form-group">
+                                <label for="formLimitaciones">Incluya lista de referencias bibliográficas relevantes en estilo Vancouver</label>
+                                <textarea id="formLimitaciones" class="form-control" rows="18" maxlength="3500"></textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                </form>
+
+<!-- MODALS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+                <div class="modal fade" id="addCovariableModal" tabindex="-1" role="dialog" aria-labelledby="addCovariableModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addDiagnosisModalLabel">Añadir covariable</h4>
+                      </div>
+                      <div class="modal-body">
+                          <span class="ref">ref: añadir_covariable_1</span>
+                        <div class="form-group">
+                            <label for="modalNombreCovariable">Nombre de la covariable </label>
+                            <input id="modalNombreCovariable" type="text" class="form-control input-normalizado"></input>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="formSexo">La covariable es:</label>
+                            <select id="modalTipoCovariable" class="form-control covariable-cambiante">
+                                <option value="diagnostico" selected>Un diagnóstico</option>
+                                <option value="farmaco">El uso de un fármaco</option>
+                                <option value="tabaco">Tabaquismo</option>
+                                <option value="alcohol">Consumo de alcohol</option>
+                                <option value="imc">Índice de masa corporal</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id= "addCovariable" type="button" class="btn btn-primary">Añadir</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="delCovariableModal" tabindex="-1" role="dialog" aria-labelledby="delCovariableModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addDrugModalLabel">Eliminar covariable <span class="nombreCovariableParaBorrar"></span></h4>
+                      </div>
+                      <div class="modal-body">
+                          <span class="ref">ref: eliminar_covariable_1</span>
+                        <h4>¿Está seguro de que quiere eliminar la covariable <span class="nombreCovariableParaBorrar"></span>? Se perderán todos los datos introducidos sobre esta covariable de manera definitiva.</h4>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id= "remove_covariable_button" covariableParaBorrar="" type="button" class="btn btn-danger">Eliminar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="addDiagnosisModal" tabindex="-1" role="dialog" aria-labelledby="addDiagnosisModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addDiagnosisModalLabel">Añadir diagnóstico</h4>
+                      </div>
+                      <div class="modal-body">
+                          <span class="ref">ref: añadir_diagnostico_1</span>
+                        <input id="anadirDiagnosticoInput" class="form-control" type="text"></input>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id= "add_diagnosis" type="button" class="btn btn-primary">Añadir</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <!-- Modal -->
+                <div class="modal fade" id="addDrugModal" tabindex="-1" role="dialog" aria-labelledby="addDrugModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addDrugModalLabel">Añadir fármaco</h4>
+                      </div>
+                      <div class="modal-body">
+                          <span class="ref">ref: añadir_farmaco_1</span>
+                        <input id="anadirFarmacoInput" class="form-control" type="text"></input>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id= "add_drug" type="button" class="btn btn-primary">Añadir</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
+
+                
+                
+                
+                
+                
+                
+            </div>
+         </div>
+        </div>
+
+
+ 
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="./protocolo.js?m"></script>
+
+
+  </body>
+</html>
