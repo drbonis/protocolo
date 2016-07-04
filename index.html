@@ -35,42 +35,50 @@
                 <div class="col-md-12">
                     <div class="col-md-3" role="navigation">
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a ng-click="viewCtrl.setSubsection('general','main')" href="#">General</a></li>
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','titulo')" href="#">Título e hipótesis</a></li>
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','antecedentes')" href="#">Antecedentes</a></li>
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','objetivos')" href="#">Objetivos</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('general','main')}"><a ng-click="viewCtrl.setSubsection('general','main')" href="#">General <span class="glyphicon" ng-class="{'glyphicon-ok-sign green': viewCtrl.checkCompleteness('general','main')}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('general','titulo')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','titulo')" href="#">Título e hipótesis <span class="glyphicon" ng-class="{'glyphicon-ok-sign green': viewCtrl.checkCompleteness('general','titulo')}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('general','antecedentes')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','antecedentes')" href="#">Antecedentes <span class="glyphicon" ng-class="{'glyphicon-ok-sign green': viewCtrl.checkCompleteness('general','antecedentes')}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('general','objetivos')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','objetivos')" href="#">Objetivos <span class="glyphicon" ng-class="{'glyphicon-ok-sign green': viewCtrl.checkCompleteness('general','objetivos')}"></span></a></li>
                             
-                            <li><a ng-click="viewCtrl.setSubsection('poblacion','main')" href="#">Población</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','main')}"><a ng-click="viewCtrl.setSubsection('poblacion','main')" href="#">Población</a></li>
                             
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','periodo')" href="#">Periodo, edad y sexo</a></li>
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','inclusion')" href="#">Criterios de inclusión</a></li>
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','exclusion')" href="#">Criterios de exclusión</a></li>
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','comentarios')" href="#">Comentarios</a></li>
-                            
-                            
-                            
-                            
-                            <li><a ng-click="viewCtrl.setSubsection('evento','main')" href="#">Evento</a></li>
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','definicion')" href="#">Definición de caso</a></li>
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','avanzadas')" href="#">Opciones avanzadas</a></li>
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','comentarios')" href="#">Comentarios</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','periodo')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','periodo')" href="#">Periodo, edad y sexo</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','inclusion')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','inclusion')" href="#">Criterios de inclusión</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','exclusion')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','exclusion')" href="#">Criterios de exclusión</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','comentarios')" href="#">Comentarios</a></li>
                             
                             
                             
-                            <li><a ng-click="viewCtrl.setSubsection('controles','main')" href="#">Controles</a></li>
                             
-                            <li ng-show="viewCtrl.viewFlags.activeSection=='controles'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('controles','criterios')" href="#">Selección de controles</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','main')}"><a ng-click="viewCtrl.setSubsection('evento','main')" href="#">Evento</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','definicion')}" ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','definicion')" href="#">Definición de caso</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','avanzadas')}" ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','avanzadas')" href="#">Opciones avanzadas</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','comentarios')" href="#">Comentarios</a></li>
                             
                             
                             
-                            <li><a ng-click="viewCtrl.viewFlags.activeSection = 'exposicion'" href="#">Exposición principal</a></li>
-                            <li><a ng-click="viewCtrl.viewFlags.activeSection = 'covariables'" href="#">Covariables</a></li>
-                            <li><a ng-click="viewCtrl.viewFlags.activeSection = 'analisis'" href="#">Plan de análisis</a></li>
-                            <li><a ng-click="viewCtrl.viewFlags.activeSection = 'limitaciones'" href="#">Limitaciones</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('controles','main')}"><a ng-click="viewCtrl.setSubsection('controles','main')" href="#">Controles</a></li>
                             
-                            <li><a ng-click="viewCtrl.viewFlags.activeSection = 'cronograma'" href="#">Cronograma</a></li>
-                            <li><a ng-click="viewCtrl.viewFlags.activeSection = 'bibliografia'" href="#">Bibliografía</a></li>
-                            <li><a ng-click="viewCtrl.viewFlags.activeSection = 'resumen'" href="#">Resumen</a></li>
+
+                            
+                            
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','main')}"><a ng-click="viewCtrl.setSubsection('exposicion','main')" href="#">Exposición principal</a></li>
+                            
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','definicion')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','definicion')" href="#">Definición de exposición principal</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','avanzadas')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','avanzadas')" href="#">Opciones avanzadas</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','comentarios')" href="#">Comentarios</a></li>
+                            
+                            
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('covariables','main')}"><a ng-click="viewCtrl.setSubsection('covariables','main')" href="#">Covariables</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('analisis','main')}"><a ng-click="viewCtrl.setSubsection('analisis','main')" href="#">Plan de análisis</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('limitaciones','main')}"><a ng-click="viewCtrl.setSubsection('limitaciones','main')" href="#">Limitaciones</a></li>
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('cronograma','main')}"><a ng-click="viewCtrl.setSubsection('cronograma','main')" href="#">Cronograma</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('bibliografia','main')}"><a ng-click="viewCtrl.setSubsection('bibliografia','main')" href="#">Bibliografía</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('resumen','main')}"><a ng-click="viewCtrl.setSubsection('resumen','main')" href="#">Resumen</a></li>
                         </ul>
                     </div>
                     <div class="col-md-9 fixed-height-col">
@@ -335,11 +343,6 @@
                             
                             <div ng-show="viewCtrl.viewFlags.activeSubsection == 'main'">
                                 <p>En esta sección debe específicar los criterios para la selección de los controles en el estudio.</p>
-                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('controles','criterios')">Siguiente: Selección de controles</button>
-                            </div>
-                            
-                            <div ng-show="viewCtrl.viewFlags.activeSubsection == 'criterios'">
-
                                     <div class="form-group">
                                         <label>Número de controles por caso</label>
                                         <input id="formNumControlesPorCaso" type="number" min="1" max="10" class="form-control" value="1" ng-model="viewCtrl.protocolo.controles.numero"></input>
@@ -391,6 +394,8 @@
                                             <label for="emparejamientoDetalles">Otros criterios de emparejamiento</label>
                                             <textarea id="emparejamientoDetalles" class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.controles.emparejamiento.detalles"></textarea>
                                         </div>
+                                        
+                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('exposicion','main')">Siguiente: Exposición principal</button>
                                     </div>
  
                             </div>
@@ -404,7 +409,117 @@
                         
                         
                         <div ng-show="viewCtrl.viewFlags.activeSection=='exposicion'">
-                            <h1>Exposición</h1>
+                            <h1>Exposición principal</h1>
+                            
+                            <div ng-show="viewCtrl.viewFlags.activeSubsection == 'main'">
+                                <p>En esta sección debe definir la exposición principal del estudio.</p>
+                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('exposicion','definicion')">Siguiente: Definición de la exposición principal</button>
+                            </div>
+                            
+                            <div ng-show="viewCtrl.viewFlags.activeSubsection == 'definicion'">
+                                        <div class="form-group">
+                                            <label class="control-label" for="formSexo">La exposición principal a estudiar tiene que ver con:</label>
+                                            <select class="form-control" ng-model="viewCtrl.protocolo.exposicion.tipo">
+                                                <option value="diagnostico" selected>Un diagnóstico</option>
+                                                <option value="farmaco">El uso de fármacos</option>
+                                                <option value="mixto">Un diagnóstico y/o el uso de fármacos</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Escriba una definición clínica de la exposición principal que quiere analizar en el estudio</label>
+                                            <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.protocolo.exposicion.definicion"></textarea>
+                                        </div>
+                                        
+                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('exposicion','avanzadas')">Siguiente: Definición avanzada de la exposición principal</button>
+
+                            </div>
+                            
+                            <div ng-show="viewCtrl.viewFlags.activeSubsection == 'avanzadas'">
+                                
+                                <div class="form-group">
+                                    <div>La definición de la exposición principal requiere datos adicionales (analíticas, derivaciones a especialistas...)
+                                        <label class="radio-inline">
+                                          <input type="radio" name="exposicionUsaDGP" ng-model="viewCtrl.protocolo.exposicion.adicionales.requerido" ng-value="true"> Si
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="exposicionUsaDGP" ng-model="viewCtrl.protocolo.exposicion.adicionales.requerido" ng-value="false"> No
+                                        </label>
+
+                                    </div>
+                                    
+                                    <div ng-show="viewCtrl.protocolo.exposicion.adicionales.requerido">
+                                        <label for="eventoUsaDGPDetalles">Describa los criterios para definir la exposición principal con datos adicionales (analíticas, derivaciones, etc)</label>
+                                        <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.protocolo.exposicion.adicionales.detalles"></textarea>
+                                    </div>
+                                </div>
+                                
+
+                                
+                                <div ng-hide="viewCtrl.protocolo.exposicion.tipo == 'diagnostico'">¿Se requiere clasificación de la exposición principal según dosis?
+                                    <label class="radio-inline">
+                                      <input type="radio" ng-value="true" ng-model="viewCtrl.protocolo.exposicion.dosis.requerido"> Si
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" ng-value="false" ng-model="viewCtrl.protocolo.exposicion.dosis.requerido"> No
+                                    </label>
+                                
+                                
+                                    <div ng-show="viewCtrl.protocolo.exposicion.dosis.requerido">
+                                        <select class="form-control" ng-model="viewCtrl.protocolo.exposicion.dosis.tipo">
+                                            <option value="ddd">Según valores oficiales de Dosis Diaria Definida</option>
+                                            <option value="manual">Según puntos de corte definidos manualmente para cada fármaco</option>
+                                            <option value="otros">Otros criterios</option>
+                                        </select>
+                                        
+                                        <div ng-hide="viewCtrl.protocolo.exposicion.dosis.tipo == 'ddd'">
+                                            <label  ng-show="viewCtrl.protocolo.exposicion.dosis.tipo == 'manual'">Especifique los puntos de corte para dosis baja, intermedia y alta de cada fármaco:</label>
+                                            <label  ng-show="viewCtrl.protocolo.exposicion.dosis.tipo == 'otros'">Especifique los criterios de estratificación por dosis para cada fármaco:</label>
+                                            
+                                            <textarea class="form-control" rows="4" maxlength="1500" ng-model="viewCtrl.protocolo.exposicion.dosis.detalles"></textarea>
+                                        </div>
+                                        
+                                    </div>
+                                    
+
+                                </div>
+
+                                <div ng-hide="viewCtrl.protocolo.exposicion.tipo == 'diagnostico'">¿Se requiere clasificación de la exposición principal según duración del tratamiento?
+                                    <label class="radio-inline">
+                                      <input type="radio" name="exposicionRequiereDuracion" ng-value="true" ng-model="viewCtrl.protocolo.exposicion.duracion.requerido"> Si
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="exposicionRequiereDuracion" ng-value="false" ng-model="viewCtrl.protocolo.exposicion.duracion.requerido"> No
+                                    </label>
+                                    
+                                    <div ng-show="viewCtrl.protocolo.exposicion.duracion.requerido" class="form-group">
+                                        <div>
+                                            <input type="radio" name="exposicionDuracion" value="continua" ng-model="viewCtrl.protocolo.exposicion.duracion.tipo"> <strong>Duración contínua:</strong> desde la primera prescripción de estudio se van encadenando las duraciones de todas las prescripciones siguientes mientras entre el final de una y el principio de la siguiente no pasen más de <input type="text" ng-model="viewCtrl.protocolo.exposicion.duracion.gap" size="2"> días (gap).
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="exposicionDuracion" value="acumulada" ng-model="viewCtrl.protocolo.exposicion.duracion.tipo"> <strong>Duración acumulada:</strong> tiempo total que ha estado utilizando el fármaco/s de interés independientemente de que sea en contínuo o no.
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                                
+                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('exposicion','comentarios')">Siguiente: Comentarios sobre exposición principal</button>
+                                
+                            </div>
+                                
+                            <div ng-show="viewCtrl.viewFlags.activeSubsection == 'comentarios'">
+                                <div class="form-group">
+                                    <label >Si tiene experiencia usando datos de BIFAP puede opcionalmente describir una definición operativa más detallada de la exposición principal</label>
+                                    <textarea class="form-control" rows="16" maxlength="1500" ng-model="viewCtrl.protocolo.exposicion.comentarios"></textarea>
+                                </div>
+                                
+                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('covariables','main')">Siguiente: Covariables</button>
+                            </div>
+                            
+                            
+                            
+                            
                         </div>
                         
                         
@@ -424,6 +539,7 @@
                                         <option value="imc">Índice de masa corporal</option>
                                     </select>
                                 </div>
+                                
                                 <div ng-hide="viewCtrl.newCovariable.tipo == ''">
                                     <div class="form-group">
                                         <label >Nombre de la covariable </label>
@@ -449,72 +565,134 @@
                                 </div>
                             </div>
                             
+                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('analisis','main')">Siguiente: Análisis</button>
+                            
                         </div>
                         
                         
                         
                         <div ng-show="viewCtrl.viewFlags.activeSection=='analisis'">
                             <h1>Análisis</h1>
+                            <p>Indique los análisis que planea realizar en el estudio.</p>
+                            
+                            <div>
+                            Calcular incidencia del evento en la cohorte
+                                <label class="radio-inline">
+                                  <input type="radio" ng-value="true" ng-model="viewCtrl.protocolo.analisis.incidencia.requerido"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" ng-value="false" ng-model="viewCtrl.protocolo.analisis.incidencia.requerido"> No
+                                </label>
+                                <div ng-show="viewCtrl.protocolo.analisis.incidencia.requerido">
+                                    <label for="incidenciaCalculoDetalles">Indique cómo va a calcular y analizar la incidencia en la cohorte cruda</label>
+                                    <textarea id="incidenciaCalculoDetalles" class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.analisis.incidencia.detalles"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div>
+                            Calcular estimadores crudos y ajustados de Odds Ratio
+                                <label class="radio-inline">
+                                  <input type="radio" ng-value="true" ng-model="viewCtrl.protocolo.analisis.or.requerido"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" ng-value="false" ng-model="viewCtrl.protocolo.analisis.or.requerido"> No
+                                </label>
+                                <div ng-show="viewCtrl.protocolo.analisis.or.requerido">
+                                    <label>Indique cómo va a realizar el cálculo y análisis de estimadores de riesgo. Incluya las categorías de referencia.</label>
+                                    <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.analisis.or.detalles"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div>
+                            Análisis de subgrupos
+                                <label class="radio-inline">
+                                  <input type="radio" ng-value="true" ng-model="viewCtrl.protocolo.analisis.subgrupos.requerido"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" ng-value="false" ng-model="viewCtrl.protocolo.analisis.subgrupos.requerido"> No
+                                </label>
+                                <div ng-show="viewCtrl.protocolo.analisis.subgrupos.requerido">
+                                    <label>Indique cómo va a realizar el análisis de subgrupos</label>
+                                    <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.analisis.subgrupos.detalles"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div>
+                            Análisis de sensibilidad
+                                <label class="radio-inline">
+                                  <input type="radio" ng-value="true" ng-model="viewCtrl.protocolo.analisis.sensibilidad.requerido"> Si
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" ng-value="false" ng-model="viewCtrl.protocolo.analisis.sensibilidad.requerido"> No
+                                </label>
+                                <div ng-show="viewCtrl.protocolo.analisis.sensibilidad.requerido">
+                                    <label>Indique cómo va a realizar el análisis de subgrupos</label>
+                                    <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.analisis.sensibilidad.detalles"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="otroCalculoDetalles">Describa otros análisis adicionales de manera opcional</label>
+                                <textarea id="otroCalculoDetalles" class="form-control" rows="10" maxlength="1500" ng-model="viewCtrl.protocolo.analisis.otros"></textarea>
+                            </div>
+                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('limitaciones','main')">Siguiente: Limitaciones</button>
                         </div>
                         
                         
                         
                         <div ng-show="viewCtrl.viewFlags.activeSection=='limitaciones'">
                             <h1>Limitaciones</h1>
+                            <div>
+                                <label>Señale las potenciales limitaciones del protocolo de estudio</label>
+                                <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.limitaciones"></textarea>
+                            </div>
+                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('cronograma','main')">Siguiente: Cronograma</button>
                         </div>
                         
                         
                         
                         <div ng-show="viewCtrl.viewFlags.activeSection=='cronograma'">
                             <h1>Cronograma</h1>
+                            
+                            <div>
+                                <label>Describa un cronograma aproximado del estudio</label>
+                                <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.cronograma"></textarea>
+                            </div>
+                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('bibliografia','main')">Siguiente: Bibliografía</button>
                         </div>
                         
                         
                         
                         <div ng-show="viewCtrl.viewFlags.activeSection=='bibliografia'">
                             <h1>Bibliografía</h1>
+                            <div>
+                                <label>Incluya lista de referencias bibliográficas relevantes en estilo Vancouver</label>
+                                <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.bibliografia"></textarea>
+                            </div>
+                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('resumen','main')">Siguiente: Resumen final</button>
                         </div>
                         
                         
                         
                         <div ng-show="viewCtrl.viewFlags.activeSection=='resumen'">
                             <h1>Resumen</h1>
-                            <p>Título: {{viewCtrl.protocolo.titulo}}</p>
-                            <p>Hipótesis: {{viewCtrl.protocolo.hipotesis}}</p>
-                            <p>Antecedentes: {{viewCtrl.protocolo.antecedentes}}</p>
-                            <p>Objetivos: {{viewCtrl.protocolo.objetivos}}</p>
-                            <p>Periodo: {{viewCtrl.protocolo.poblacion.periodo.inicio}} a {{viewCtrl.protocolo.poblacion.periodo.fin}}</p>
-                            <p>Edad: {{viewCtrl.protocolo.poblacion.edad.minima}} a {{viewCtrl.protocolo.poblacion.edad.maxima}}</p>
-                            <p>Sexo: {{viewCtrl.protocolo.poblacion.sexo}}</p>
-                            <p>Criterios de inclusión: {{viewCtrl.protocolo.poblacion.inclusion}}</p>
-                            <p>Criterios de exclusión: {{viewCtrl.protocolo.poblacion.exclusion}}</p>
-                            <p>Comentarios: {{viewCtrl.protocolo.poblacion.comentarios}}</p>
-                            <p>Tipo de evento principal: {{viewCtrl.protocolo.caso.tipo}}</p>
-                            <p>Definición del evento principal: {{viewCtrl.protocolo.caso.definicion}}</p>
+
                             
-                            <p>Requiere datos adicionales: {{viewCtrl.protocolo.caso.adicionales.requerido}}</p>
-                            <p>Datos adicionales: {{viewCtrl.protocolo.caso.adicionales.detalles}}</p>
                             
-                            <p>Estratificación por dosis requerida: {{viewCtrl.protocolo.caso.dosis.requerido}}</p>
-                            <p>Tipo estratificación por dosis: {{viewCtrl.protocolo.caso.dosis.tipo}}</p>
-                            <p>Detalles estratificación por dosis: {{viewCtrl.protocolo.caso.dosis.detalles}}</p>
-                            <p>Estratificación por duracion requerida: {{viewCtrl.protocolo.caso.duracion.requerido}}</p>
-                            <p>Tipo estratificación por duracion: {{viewCtrl.protocolo.caso.duracion.tipo}}</p>
-                            <p>GAP para duración: {{viewCtrl.protocolo.caso.duracion.gap}}</p>
                             
                             
                             <div class="form-group">
-                                <label for="formResumenDelProyecto">Resumen del proyecto <button type="button" class="btn btn-link btn-xs help-button" data-toggle="modal" data-target="#ayuda_01-02"><span class="glyphicon glyphicon-question-sign help-icon" aria-label="ayuda"></span></button></label>
-                                <textarea id="formResumenDelProyecto" class="form-control" rows="10" maxlength="1500"></textarea>
+                                <label for="formResumenDelProyecto">Resumen del proyecto</label>
+                                <textarea ng-model="viewCtrl.protocolo.resumen.manual" id="formResumenDelProyecto" class="form-control" rows="10" maxlength="1500"></textarea>
+                                
                             </div>
-                            <div class="form-group">
-                                <label for="formMetodos">Pacientes y métodos</label>
-                                <textarea id="formMetodos" class="form-control" rows="10" maxlength="6000"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="formDiseno">Diseño del estudio</label>
-                                <textarea id="formDiseno" class="form-control" rows="10" maxlength="6000"></textarea>
-                            </div>
+                            
+                            <p>Ejemplo de resumen generado automáticamente (puede usarlo como base para redactar el suyo)</p>
+                            <pre>{{viewCtrl.protocolo.resumen.automatico}}</pre>
+                            
+                            <p>*JSON del estudio (para enviar a informática)</p>
+                            <pre>{{viewCtrl.protocolo}}</pre>
+
                         </div>
                     </div>
                 </div>
