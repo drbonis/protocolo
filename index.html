@@ -35,51 +35,58 @@
                 <div class="col-md-12">
                     <div class="col-md-3" role="navigation">
                         <ul class="nav nav-pills nav-stacked">
-                            <li ng-class="{'active': viewCtrl.checkSubsection('general','main')}"><a ng-click="viewCtrl.setSubsection('general','main')" href="#">General <span class="glyphicon" ng-class="{'glyphicon-ok-sign green': viewCtrl.checkCompleteness('general','main')}"></span></a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('general','titulo')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','titulo')" href="#">Título e hipótesis <span class="glyphicon" ng-class="{'glyphicon-ok-sign green': viewCtrl.checkCompleteness('general','titulo')}"></span></a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('general','antecedentes')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','antecedentes')" href="#">Antecedentes <span class="glyphicon" ng-class="{'glyphicon-ok-sign green': viewCtrl.checkCompleteness('general','antecedentes')}"></span></a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('general','objetivos')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','objetivos')" href="#">Objetivos <span class="glyphicon" ng-class="{'glyphicon-ok-sign green': viewCtrl.checkCompleteness('general','objetivos')}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('general','main')}"><a ng-click="viewCtrl.setSubsection('general','main')" href="#">General <span class="glyphicon glyphicon-ok-sign bf-completed" ng-show="viewCtrl.checkCompleteness('general','main').validation"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('general','titulo')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','titulo')" href="#">Título e hipótesis <span class="glyphicon glyphicon-ok-sign bf-completed" ng-show="viewCtrl.checkCompleteness('general','titulo').validation"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('general','antecedentes')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','antecedentes')" href="#">Antecedentes <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('general','antecedentes').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('general','objetivos')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','objetivos')" href="#">Objetivos <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('general','objetivos').validation}"></span></a></li>
                             
-                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','main')}"><a ng-click="viewCtrl.setSubsection('poblacion','main')" href="#">Población</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','main')}"><a ng-click="viewCtrl.setSubsection('poblacion','main')" href="#">Población <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('poblacion','main').validation}"></span></a></li>
                             
-                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','periodo')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','periodo')" href="#">Periodo, edad y sexo</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','inclusion')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','inclusion')" href="#">Criterios de inclusión</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','exclusion')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','exclusion')" href="#">Criterios de exclusión</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','comentarios')" href="#">Comentarios</a></li>
-                            
-                            
-                            
-                            
-                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','main')}"><a ng-click="viewCtrl.setSubsection('evento','main')" href="#">Evento</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','definicion')}" ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','definicion')" href="#">Definición de caso</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','avanzadas')}" ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','avanzadas')" href="#">Opciones avanzadas</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','comentarios')" href="#">Comentarios</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','periodo')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','periodo')" href="#">Periodo, edad y sexo <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('poblacion','periodo').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','inclusion')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','inclusion')" href="#">Criterios de inclusión <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('poblacion','inclusion').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','exclusion')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','exclusion')" href="#">Criterios de exclusión <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('poblacion','exclusion').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('poblacion','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='poblacion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('poblacion','comentarios')" href="#">Comentarios <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('poblacion','comentarios').validation}"></span></a></li>
                             
                             
                             
-                            <li ng-class="{'active': viewCtrl.checkSubsection('controles','main')}"><a ng-click="viewCtrl.setSubsection('controles','main')" href="#">Controles</a></li>
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','main')}"><a ng-click="viewCtrl.setSubsection('evento','main')" href="#">Evento <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('evento','main').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','definicion')}" ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','definicion')" href="#">Definición de caso <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('evento','definicion').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','avanzadas')}" ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','avanzadas')" href="#">Opciones avanzadas <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('evento','avanzadas').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('evento','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='evento'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('evento','comentarios')" href="#">Comentarios <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('evento','comentarios').validation}"></span></a></li>
+                            
+                            
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('controles','main')}"><a ng-click="viewCtrl.setSubsection('controles','main')" href="#">Controles <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('controles','main').validation}"></span></a></li>
                             
 
                             
                             
                             
-                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','main')}"><a ng-click="viewCtrl.setSubsection('exposicion','main')" href="#">Exposición principal</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','main')}"><a ng-click="viewCtrl.setSubsection('exposicion','main')" href="#">Exposición principal <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('exposicion','main').validation}"></span></a></li>
                             
                             
-                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','definicion')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','definicion')" href="#">Definición de exposición principal</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','avanzadas')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','avanzadas')" href="#">Opciones avanzadas</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','comentarios')" href="#">Comentarios</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','definicion')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','definicion')" href="#">Definición de exposición principal <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('exposicion','definicion').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','avanzadas')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','avanzadas')" href="#">Opciones avanzadas <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('exposicion','avanzadas').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','comentarios')" href="#">Comentarios <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('exposicion','comentarios').validation}"></span></a></li>
                             
                             
                             
-                            <li ng-class="{'active': viewCtrl.checkSubsection('covariables','main')}"><a ng-click="viewCtrl.setSubsection('covariables','main')" href="#">Covariables</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('analisis','main')}"><a ng-click="viewCtrl.setSubsection('analisis','main')" href="#">Plan de análisis</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('limitaciones','main')}"><a ng-click="viewCtrl.setSubsection('limitaciones','main')" href="#">Limitaciones</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('covariables','main')}"><a ng-click="viewCtrl.setSubsection('covariables','main')" href="#">Covariables <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('covariables','main').validation}"></span></a></li>
                             
-                            <li ng-class="{'active': viewCtrl.checkSubsection('cronograma','main')}"><a ng-click="viewCtrl.setSubsection('cronograma','main')" href="#">Cronograma</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('bibliografia','main')}"><a ng-click="viewCtrl.setSubsection('bibliografia','main')" href="#">Bibliografía</a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('resumen','main')}"><a ng-click="viewCtrl.setSubsection('resumen','main')" href="#">Resumen</a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('analisis','main')}"><a ng-click="viewCtrl.setSubsection('analisis','main')" href="#">Plan de análisis <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('analisis','main').validation}"></span></a></li>
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('limitaciones','main')}"><a ng-click="viewCtrl.setSubsection('limitaciones','main')" href="#">Limitaciones <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('limitaciones','main').validation}"></span></a></li>
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('cronograma','main')}"><a ng-click="viewCtrl.setSubsection('cronograma','main')" href="#">Cronograma <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('cronograma','main').validation}"></span></a></li>
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('bibliografia','main')}"><a ng-click="viewCtrl.setSubsection('bibliografia','main')" href="#">Bibliografía <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('bibliografia','main').validation}"></span></a></li>
+                            
+                            <li ng-class="{'active': viewCtrl.checkSubsection('resumen','main')}"><a ng-click="viewCtrl.setSubsection('resumen','main')" href="#">Resumen <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('resumen','main').validation}"></span></a></li>
                         </ul>
+                        <center>
+                            <button class="btn btn-md btn-success" ng-click="viewCtrl.sendButton()">Enviar protocolo</button>
+                        </center>
                     </div>
                     <div class="col-md-9 fixed-height-col">
                         <div ng-show="viewCtrl.viewFlags.activeSection =='general'">
@@ -335,9 +342,6 @@
                             
                             
                         </div>
-                        
-                        
-                        
                         <div ng-show="viewCtrl.viewFlags.activeSection=='controles'">
                             <h1>Controles</h1>
                             
@@ -405,9 +409,6 @@
                             
                             
                         </div>
-                        
-                        
-                        
                         <div ng-show="viewCtrl.viewFlags.activeSection=='exposicion'">
                             <h1>Exposición principal</h1>
                             
@@ -521,17 +522,14 @@
                             
                             
                         </div>
-                        
-                        
-                        
                         <div ng-show="viewCtrl.viewFlags.activeSection=='covariables'">
                             <h1>Covariables</h1>
-                            <button class="btn btn-success" ng-hide="viewCtrl.viewFlags.creatingCovariable" ng-click='viewCtrl.viewFlags.creatingCovariable = true'><h5><span class="glyphicon glyphicon-plus-sign"></span> Crear covariable</h5></button>
+                            <button class="btn btn-success" ng-hide="viewCtrl.viewFlags.creatingCovariable || viewCtrl.viewFlags.editingCovariable" ng-click='viewCtrl.viewFlags.creatingCovariable = true'><h5><span class="glyphicon glyphicon-plus-sign"></span> Crear covariable</h5></button>
                             
                             <div class="form" ng-show="viewCtrl.viewFlags.creatingCovariable">
                                 <div class="form-group">
                                     <label class="control-label" for="formSexo">La covariable es:</label>
-                                    <select class="form-control" ng-model="viewCtrl.newCovariable.tipo">
+                                    <select class="form-control" ng-model="viewCtrl.newCovariable.tipo" ng-change="viewCtrl.syncNewCovariableName()">
                                         <option value="diagnostico" selected>Un diagnóstico</option>
                                         <option value="farmaco">El uso de un fármaco</option>
                                         <option value="tabaco">Tabaquismo</option>
@@ -542,8 +540,27 @@
                                 
                                 <div ng-hide="viewCtrl.newCovariable.tipo == ''">
                                     <div class="form-group">
-                                        <label >Nombre de la covariable </label>
+                                        <label>Nombre de la covariable </label>
                                         <input type="text" class="form-control" ng-model="viewCtrl.newCovariable.nombre"></input>
+                                    </div>
+                                    
+                                    <div class="form-group" ng-show="viewCtrl.newCovariable.tipo === 'diagnostico' || viewCtrl.newCovariable.tipo === 'farmaco'">
+                                        <label>Definición</label>
+                                        <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.newCovariable.definicion"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group" ng-show="viewCtrl.newCovariable.tipo === 'diagnostico' || viewCtrl.newCovariable.tipo === 'farmaco'">
+                                        <div>
+                                            <input type="radio" name="newCovariableTemporalidad" value="ever" ng-model="viewCtrl.newCovariable.temporalidad.tipo"> en cualquier momento antes de la fecha del evento.
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.newCovariable.temporalidad.tipo">solo en los <input type="text" ng-model="viewCtrl.newCovariable.temporalidad.dias" size="2"> días previos al evento.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Comentarios adicionales</label>
+                                        <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.newCovariable.comentarios"></textarea>
                                     </div>
     
                                     
@@ -552,15 +569,61 @@
 
                             </div>
                             
+                            <div class="form" ng-show="viewCtrl.viewFlags.editingCovariable">
+                                <div class="form-group">
+                                    <label class="control-label" for="formSexo">La covariable es:</label>
+                                    <select class="form-control" ng-model="viewCtrl.covariables[self.editingCovariableIndex].tipo" ng-change="viewCtrl.syncNewCovariableName()">
+                                        <option value="diagnostico" selected>Un diagnóstico</option>
+                                        <option value="farmaco">El uso de un fármaco</option>
+                                        <option value="tabaco">Tabaquismo</option>
+                                        <option value="alcohol">Consumo de alcohol</option>
+                                        <option value="imc">Índice de masa corporal</option>
+                                    </select>
+                                </div>
+                                
+                                <div ng-hide="viewCtrl.newCovariable.tipo == ''">
+                                    <div class="form-group">
+                                        <label>Nombre de la covariable </label>
+                                        <input type="text" class="form-control" ng-model="viewCtrl.covariables[self.editingCovariableIndex].nombre"></input>
+                                    </div>
+                                    
+                                    <div class="form-group" ng-show="viewCtrl.covariables[self.editingCovariableIndex].tipo === 'diagnostico' || viewCtrl.covariables[self.editingCovariableIndex].tipo === 'farmaco'">
+                                        <label>Definición</label>
+                                        <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.covariables[self.editingCovariableIndex].definicion"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group" ng-show="viewCtrl.covariables[self.editingCovariableIndex].tipo === 'diagnostico' || viewCtrl.covariables[self.editingCovariableIndex].tipo === 'farmaco'">
+                                        <div>
+                                            <input type="radio" name="newCovariableTemporalidad" value="ever" ng-model="viewCtrl.covariables[self.editingCovariableIndex].temporalidad.tipo"> en cualquier momento antes de la fecha del evento.
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.covariables[self.editingCovariableIndex].temporalidad.tipo">solo en los <input type="text" ng-model="viewCtrl.covariables[self.editingCovariableIndex].temporalidad.dias" size="2"> días previos al evento.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Comentarios adicionales</label>
+                                        <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.covariables[self.editingCovariableIndex].comentarios"></textarea>
+                                    </div>
+    
+                                    
+                                    <button class="btn btn-success btn-lg" ng-click='viewCtrl.viewFlags.editingCovariable = false'>Modificar covariable</button>
+                                </div>
+
+                            </div>
+                            
+                            
                             
                             <div class="panel panel-default" style="margin-top: 50px; padding: 10px;">
-                                <div ng-repeat="covariable in viewCtrl.protocolo.covariables">
+                                <div ng-repeat="covariable in viewCtrl.protocolo.covariables track by $index">
                                     <div class="form-inline">
                                         <span style="font-size: 2em" ng-class="{'icon-user-md': covariable.tipo == 'diagnostico', 'icon-pill': covariable.tipo == 'farmaco', 'glyphicon glyphicon-briefcase': covariable.tipo != 'diagnostico' && covariable.tipo != 'farmaco'}"></span>
                                        <input ng-model="covariable.nombre" type="text" class="form-control"></input>
+                                       <button class="btn btn-info" ng-click="viewCtrl.editCovariable($index)"><span class="glyphicon glyphicon-cog"></span></button>
                                        
                                        
-                                       <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                                       
+                                       <button class="btn btn-danger" ng-click="viewCtrl.deleteCovariable(covariable)"><span class="glyphicon glyphicon-trash"></span></button>
                                     </div>
                                 </div>
                             </div>
@@ -568,9 +631,6 @@
                             <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('analisis','main')">Siguiente: Análisis</button>
                             
                         </div>
-                        
-                        
-                        
                         <div ng-show="viewCtrl.viewFlags.activeSection=='analisis'">
                             <h1>Análisis</h1>
                             <p>Indique los análisis que planea realizar en el estudio.</p>
@@ -637,9 +697,6 @@
                             </div>
                             <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('limitaciones','main')">Siguiente: Limitaciones</button>
                         </div>
-                        
-                        
-                        
                         <div ng-show="viewCtrl.viewFlags.activeSection=='limitaciones'">
                             <h1>Limitaciones</h1>
                             <div>
@@ -648,9 +705,6 @@
                             </div>
                             <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('cronograma','main')">Siguiente: Cronograma</button>
                         </div>
-                        
-                        
-                        
                         <div ng-show="viewCtrl.viewFlags.activeSection=='cronograma'">
                             <h1>Cronograma</h1>
                             
@@ -660,9 +714,6 @@
                             </div>
                             <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('bibliografia','main')">Siguiente: Bibliografía</button>
                         </div>
-                        
-                        
-                        
                         <div ng-show="viewCtrl.viewFlags.activeSection=='bibliografia'">
                             <h1>Bibliografía</h1>
                             <div>
@@ -671,9 +722,6 @@
                             </div>
                             <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('resumen','main')">Siguiente: Resumen final</button>
                         </div>
-                        
-                        
-                        
                         <div ng-show="viewCtrl.viewFlags.activeSection=='resumen'">
                             <h1>Resumen</h1>
 
@@ -688,11 +736,30 @@
                             </div>
                             
                             <p>Ejemplo de resumen generado automáticamente (puede usarlo como base para redactar el suyo)</p>
-                            <pre>{{viewCtrl.protocolo.resumen.automatico}}</pre>
+                            <div>{{viewCtrl.protocolo.resumen.automatico}}</div>
                             
-                            <p>*JSON del estudio (para enviar a informática)</p>
-                            <pre>{{viewCtrl.protocolo}}</pre>
 
+
+                        </div>
+                        <div ng-show="viewCtrl.viewFlags.activeSection=='envio'">
+                            <div ng-show="viewCtrl.viewFlags.activeSubsection == 'error'">
+                                <h1>No ha sido posible enviar su protocolo</h1>
+                                <h2>Estos son los errores pendientes de corregir:</h2>
+                                <div ng-repeat="error in viewCtrl.error_msg" class="row">
+                                    <div class="col-md-1">
+                                        <a href="#" ng-click='viewCtrl.setSubsection(error.section,error.subsection)'>Corregir</a>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <span>{{error.msg}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="viewCtrl.viewFlags.activeSubsection == 'success'">
+                                <h1>Protocolo enviado con éxito!</h1>
+                                <p>*JSON del estudio (para enviar a informática)</p>
+                                <pre>{{viewCtrl.protocolo}}</pre>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>

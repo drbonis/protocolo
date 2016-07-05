@@ -6,6 +6,10 @@ textarea {
     text-align: center;
 }
 
-.green {
-    color: green!important;
+.bf-completed{
+    color: green;
+}
+
+.bf-active {
+    background-color: red;
 }
