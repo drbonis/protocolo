@@ -23,13 +23,17 @@
         
         <link href="https://file.myfontastic.com/mnEaDyrxtBPxRTfG7ZvwSE/icons.css" rel="stylesheet">
         
+        <link href="https://fonts.googleapis.com/css?family=Raleway|Sumana" rel="stylesheet">
+        
+        
+        
         <script src="./app.js"></script>
         <link rel="stylesheet" href="./protocolo.css">
     </head>
     <body ng-controller="ViewController as viewCtrl">
         <div class="container-fluid">
             <div class="page-header">
-                <h4>Protocolo de diseño Caso-Control BIFAP v1.0 <span class="glyphicon glyphicon-cog" ng-click="viewCtrl.test()"></span></h4>
+                <h2 class="sumana">Protocolo de diseño Caso-Control BIFAP v0.3 <span class="glyphicon glyphicon-cog" ng-click="viewCtrl.test()"></span></h2>
             </div>
             <div class="row fixed-height padded">
                 <div class="col-md-12">
@@ -66,7 +70,7 @@
                             <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','main')}"><a ng-click="viewCtrl.setSubsection('exposicion','main')" href="#">Exposición principal <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('exposicion','main').validation}"></span></a></li>
                             
                             
-                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','definicion')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','definicion')" href="#">Definición de exposición principal <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('exposicion','definicion').validation}"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','definicion')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','definicion')" href="#">Definición  <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('exposicion','definicion').validation}"></span></a></li>
                             <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','avanzadas')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','avanzadas')" href="#">Opciones avanzadas <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('exposicion','avanzadas').validation}"></span></a></li>
                             <li ng-class="{'active': viewCtrl.checkSubsection('exposicion','comentarios')}" ng-show="viewCtrl.viewFlags.activeSection=='exposicion'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('exposicion','comentarios')" href="#">Comentarios <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('exposicion','comentarios').validation}"></span></a></li>
                             
@@ -84,8 +88,9 @@
                             
                             <li ng-class="{'active': viewCtrl.checkSubsection('resumen','main')}"><a ng-click="viewCtrl.setSubsection('resumen','main')" href="#">Resumen <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('resumen','main').validation}"></span></a></li>
                         </ul>
+                        
                         <center>
-                            <button class="btn btn-md btn-success" ng-click="viewCtrl.sendButton()">Enviar protocolo</button>
+                            <button class="btn btn-md btn-next btn-lg" style="margin-top: 20px" ng-click="viewCtrl.sendButton()">Enviar protocolo</button>
                         </center>
                     </div>
                     <div class="col-md-9 fixed-height-col">
@@ -94,7 +99,7 @@
                             
                                 <div ng-show="viewCtrl.viewFlags.activeSubsection == 'main'">
                                     <p>En este apartado debe introducir datos generales sobre el protocolo como el título, hipótesis principal, antecedentes que lo justifican y objectivo principal y secundarios del estudio.</p>
-                                    <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('general','titulo')">Siguiente: Título e hipótesis</button>
+                                    <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('general','titulo')">Siguiente: Título e hipótesis</button></div></div>
                                 </div>
                                 <div ng-show="viewCtrl.viewFlags.activeSubsection == 'titulo'">
                                     <div class="row">
@@ -108,7 +113,7 @@
                                             <input name="hipotesis" type="text" class="form-control" ng-model="viewCtrl.protocolo.hipotesis"></input>
                                         </div>
                                         
-                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('general','antecedentes')">Siguiente: Antecedentes</button>
+                                        <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('general','antecedentes')">Siguiente: Antecedentes</button></div></div>
                                     </div>
                                 </div>
                                 
@@ -120,7 +125,7 @@
                                         </div>
                                     </div>
                                     
-                                    <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('general','objetivos')">Siguiente: Objetivos</button>
+                                    <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('general','objetivos')">Siguiente: Objetivos</button></div></div>
                                 </div>
                                 
                                 <div ng-show="viewCtrl.viewFlags.activeSubsection == 'objetivos'">
@@ -130,7 +135,7 @@
                                             <textarea name="objetivos" class="form-control" rows="10" maxlength="1000" ng-model="viewCtrl.protocolo.objetivos"></textarea>
                                         </div>                            
                                         
-                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('poblacion','main')">Siguiente: Población a estudio</button>
+                                        <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('poblacion','main')">Siguiente: Población a estudio</button></div></div>
                                     </div>
                                     
                                 </div>
@@ -142,53 +147,62 @@
                             <h1>Población</h1>
                             <div ng-show="viewCtrl.viewFlags.activeSubsection=='main'">
                                 <p>En este apartado debe definir la población que va a ser incluida en el estudio. En primer lugar los años que va a estudiar, la edad y sexo de los pacientes, así como los criterios de inclusión y de exclusión en el estudio.</p>
-                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('poblacion','periodo')">Siguiente: Periodo de estudio</button>
+                                <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('poblacion','periodo')">Siguiente: Periodo de estudio</button></div></div>
                             </div>
                             <div ng-show="viewCtrl.viewFlags.activeSubsection=='periodo'">
-                                        <h4>Periodo de estudio</h4>
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-xs-3">
-                                                <label>Desde 1 de enero de:</label>
+                                        <h2>Periodo de estudio</h2>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                    <label>Desde 1 de enero de:</label>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                    <input id="formPeriodoIni" class="form-control" type="number" max="2013" min="2001" value="2005" ng-model="viewCtrl.protocolo.poblacion.periodo.inicio"></input>            
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                    <label>Hasta 31 de diciembre de:</label>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                    <input id="formPeriodoEnd" class="form-control" type="number" max="2014" min="2002" value="2010" ng-model="viewCtrl.protocolo.poblacion.periodo.fin"></input>
+                                                    </div>
                                                 </div>
-                                                <div class="col-xs-2">
-                                                <input id="formPeriodoIni" class="form-control" type="number" max="2013" min="2001" value="2005" ng-model="viewCtrl.protocolo.poblacion.periodo.inicio"></input>            
-                                                </div>
-                                                <div class="col-xs-3">
-                                                <label>Hasta 31 de diciembre de:</label>
-                                                </div>
-                                                <div class="col-xs-2">
-                                                <input id="formPeriodoEnd" class="form-control" type="number" max="2014" min="2002" value="2010" ng-model="viewCtrl.protocolo.poblacion.periodo.fin"></input>
+                                            </div>
+                                            <div clas="form-group">
+                                                <h2>Rango de edad y sexo</h2>
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                    <label class="control-label">Edad mínima:</label>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                    <input id="formEdadMin" class="form-control" type="number" max="109" min="0" value="0" ng-model="viewCtrl.protocolo.poblacion.edad.minima"></input>            
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                    <label class="control-label">Edad máxima:</label>
+                                                    </div>
+                                                    <div class="col-xs-2">
+                                                    <input id="formEdadMax" class="form-control" type="number" max="109" min="0" value="109" ng-model="viewCtrl.protocolo.poblacion.edad.maxima"></input>                
+                                                    </div>
                                                 </div>
                                             </div>
                                             
-                                            <h4>Rango de edad</h4>
-                                            <div class="row">
-                                                <div class="col-xs-3">
-                                                <label class="control-label">Edad mínima:</label>
-                                                </div>
-                                                <div class="col-xs-2">
-                                                <input id="formEdadMin" class="form-control" type="number" max="109" min="0" value="0" ng-model="viewCtrl.protocolo.poblacion.edad.minima"></input>            
-                                                </div>
-                                                <div class="col-xs-3">
-                                                <label class="control-label">Edad máxima:</label>
-                                                </div>
-                                                <div class="col-xs-2">
-                                                <input id="formEdadMax" class="form-control" type="number" max="109" min="0" value="109" ng-model="viewCtrl.protocolo.poblacion.edad.maxima"></input>                
+                                            <div class="form-group" style="margin-top: 20px">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                    <label class="control-label" for="sexo">Sexo</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                    <select name="sexo" class="form-control" ng-model="viewCtrl.protocolo.poblacion.sexo">
+                                                      <option selected value="ambos">Ambos sexos</option>
+                                                      <option value="hombres">Solamente Hombres</option>
+                                                      <option value="mujeres">Solamente Mujeres</option>
+                                                    </select>
+                                                    </div>
                                                 </div>
                                             </div>
             
-                                            <label class="control-label" for="sexo">Sexo</label>
-                                            <select name="sexo" class="form-control" ng-model="viewCtrl.protocolo.poblacion.sexo">
-                                              <option selected value="ambos">Ambos sexos</option>
-                                              <option value="hombres">Solamente Hombres</option>
-                                              <option value="mujeres">Solamente Mujeres</option>
-                                            </select>
                                             
-            
-                                            
-                                        </div>
-                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('poblacion','inclusion')">Siguiente: Criterios de inclusión</button>
+                                        
+                                        <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('poblacion','inclusion')">Siguiente: Criterios de inclusión</button></div></div>
                                         
             
                                         
@@ -201,7 +215,7 @@
                                             <label for="inclusion">Criterios de inclusión</label>
                                             <textarea id="inclusion" class="form-control" rows=10 maxlength="1500" ng-model="viewCtrl.protocolo.poblacion.inclusion"></textarea>
                                         </div>
-                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('poblacion','exclusion')">Siguiente: Criterios de exclusión</button>
+                                        <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('poblacion','exclusion')">Siguiente: Criterios de exclusión</button></div></div>
                                         
 
                                 </div>
@@ -213,7 +227,7 @@
                                             <textarea id="exclusion" class="form-control" rows=10 maxlength="1500" ng-model="viewCtrl.protocolo.poblacion.exclusion"></textarea>
                                         </div>
                                         
-                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('poblacion','comentarios')">Siguiente: Comentarios</button>
+                                        <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('poblacion','comentarios')">Siguiente: Comentarios</button></div></div>
             
 
                                 </div>
@@ -225,7 +239,7 @@
                                             <textarea id="formPoblacionComentarios" class="form-control" rows=10 maxlength="1500" ng-model="viewCtrl.protocolo.poblacion.comentarios"></textarea>
                                         </div>
                                         
-                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('evento','main')">Siguiente: Definición del evento (casos)</button>
+                                        <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('evento','main')">Siguiente: Definición del evento (casos)</button></div></div>
 
                                 </div>
                                
@@ -234,7 +248,7 @@
                             <h1>Evento principal - Definición de caso</h1>
                             <div ng-show="viewCtrl.viewFlags.activeSubsection == 'main'">
                                 <p>En este apartado debe definir los criterios que definen el evento (outcome o caso) que quiere estudiar.</p>
-                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('evento','definicion')">Siguiente: Definición de caso</button>
+                                <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('evento','definicion')">Siguiente: Definición de caso</button></div></div>
                                 
                                 
                             </div>
@@ -254,7 +268,7 @@
                                             <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.protocolo.caso.definicion"></textarea>
                                         </div>
                                         
-                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('evento','avanzadas')">Siguiente: Definición avanzada de caso</button>
+                                        <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('evento','avanzadas')">Siguiente: Definición avanzada de caso</button></div></div>
 
                             </div>
                             
@@ -327,7 +341,7 @@
                                     
                                 </div>
                                 
-                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('evento','comentarios')">Siguiente: Comentarios</button>
+                                <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('evento','comentarios')">Siguiente: Comentarios</button></div></div>
                                 
                             </div>
                                 
@@ -337,7 +351,7 @@
                                     <textarea class="form-control" rows="16" maxlength="1500" ng-model="viewCtrl.protocolo.caso.comentarios"></textarea>
                                 </div>
                                 
-                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('controles','main')">Siguiente: Controles</button>
+                                <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('controles','main')">Siguiente: Controles</button></div></div>
                             </div>
                             
                             
@@ -351,55 +365,72 @@
                                         <label>Número de controles por caso</label>
                                         <input id="formNumControlesPorCaso" type="number" min="1" max="10" class="form-control" value="1" ng-model="viewCtrl.protocolo.controles.numero"></input>
                                     </div>
-                                    <div>Se requiere emparejamiento de casos y controles
+                                    <div>
+                                        <div class="col-md-9 bf-underlined">
+                                        Se requiere emparejamiento de casos y controles
+                                        </div>
+                                        <div class="col-md-3">
                                         <label class="radio-inline">
                                           <input type="radio" name="emparejamiento" ng-value="true" ng-model="viewCtrl.protocolo.controles.emparejamiento.requerido" > Si
                                         </label>
                                         <label class="radio-inline">
                                           <input type="radio" name="emparejamiento" ng-value="false" ng-model="viewCtrl.protocolo.controles.emparejamiento.requerido"> No
                                         </label>
+                                        </div>
                                         
                                         <div ng-show="viewCtrl.protocolo.controles.emparejamiento.requerido">
                                             
                                             <div class="form-group">
-                                                <div>Emparejamiento por edad
-                                                <label class="radio-inline">
-                                                  <input type="radio" name="emparejamientoEdad" ng-value="true" ng-model="viewCtrl.protocolo.controles.emparejamiento.edad"> Si
-                                                </label>
-                                                <label class="radio-inline">
-                                                  <input type="radio" name="emparejamientoEdad" ng-value="false" ng-model="viewCtrl.protocolo.controles.emparejamiento.edad" > No
-                                                </label>
+
+                                                    <div class="col-md-8 col-md-offset-1 bf-underlined">
+                                                        Emparejamiento por edad
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label class="radio-inline">
+                                                          <input type="radio" name="emparejamientoEdad" ng-value="true" ng-model="viewCtrl.protocolo.controles.emparejamiento.edad"> Si
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                          <input type="radio" name="emparejamientoEdad" ng-value="false" ng-model="viewCtrl.protocolo.controles.emparejamiento.edad" > No
+                                                        </label>
+                                                    </div>
+
+                                            </div> 
+                                            
+                                            <div class="form-group">
+                                                <div class="col-md-8 col-md-offset-1 bf-underlined">
+                                                    Emparejamiento por sexo
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="radio-inline">
+                                                      <input type="radio" name="emparejamientoSexo" ng-value="true" ng-model="viewCtrl.protocolo.controles.emparejamiento.sexo"> Si
+                                                    </label>
+                                                    <label class="radio-inline">
+                                                      <input type="radio" name="emparejamientoSexo" ng-value="false" ng-model="viewCtrl.protocolo.controles.emparejamiento.sexo"> No
+                                                    </label>
                                                 </div>
                                             </div> 
                                             
                                             <div class="form-group">
-                                                <div>Emparejamiento por sexo
-                                                <label class="radio-inline">
-                                                  <input type="radio" name="emparejamientoSexo" ng-value="true" ng-model="viewCtrl.protocolo.controles.emparejamiento.sexo"> Si
-                                                </label>
-                                                <label class="radio-inline">
-                                                  <input type="radio" name="emparejamientoSexo" ng-value="false" ng-model="viewCtrl.protocolo.controles.emparejamiento.sexo"> No
-                                                </label>
+                                                <div class="col-md-8 col-md-offset-1 bf-underlined">
+                                                    Emparejamiento por año calendario
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="radio-inline">
+                                                      <input type="radio" name="emparejamientoPeriodo" ng-value="false" ng-model="viewCtrl.protocolo.controles.emparejamiento.periodo"> Si
+                                                    </label>
+                                                    <label class="radio-inline">
+                                                      <input type="radio" name="emparejamientoPeriodo" ng-value="false" ng-model="viewCtrl.protocolo.controles.emparejamiento.periodo"> No
+                                                    </label>
                                                 </div>
                                             </div> 
                                             
                                             <div class="form-group">
-                                                <div>Emparejamiento por año calendario
-                                                <label class="radio-inline">
-                                                  <input type="radio" name="emparejamientoPeriodo" ng-value="false" ng-model="viewCtrl.protocolo.controles.emparejamiento.periodo"> Si
-                                                </label>
-                                                <label class="radio-inline">
-                                                  <input type="radio" name="emparejamientoPeriodo" ng-value="false" ng-model="viewCtrl.protocolo.controles.emparejamiento.periodo"> No
-                                                </label>
-                                                </div>
-                                            </div> 
-                                            
-                                            
-                                            <label for="emparejamientoDetalles">Otros criterios de emparejamiento</label>
-                                            <textarea id="emparejamientoDetalles" class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.controles.emparejamiento.detalles"></textarea>
+                                                <label for="emparejamientoDetalles">Otros criterios de emparejamiento</label>
+                                                <textarea id="emparejamientoDetalles" class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.controles.emparejamiento.detalles"></textarea>
+                                            </div>
                                         </div>
                                         
-                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('exposicion','main')">Siguiente: Exposición principal</button>
+                                        <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('exposicion','main')">Siguiente: Exposición principal</button></div></div>
                                     </div>
  
                             </div>
@@ -414,7 +445,7 @@
                             
                             <div ng-show="viewCtrl.viewFlags.activeSubsection == 'main'">
                                 <p>En esta sección debe definir la exposición principal del estudio.</p>
-                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('exposicion','definicion')">Siguiente: Definición de la exposición principal</button>
+                                <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('exposicion','definicion')">Siguiente: Definición de la exposición principal</button></div></div>
                             </div>
                             
                             <div ng-show="viewCtrl.viewFlags.activeSubsection == 'definicion'">
@@ -432,14 +463,14 @@
                                             <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.protocolo.exposicion.definicion"></textarea>
                                         </div>
                                         
-                                        <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('exposicion','avanzadas')">Siguiente: Definición avanzada de la exposición principal</button>
+                                        <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('exposicion','avanzadas')">Siguiente: Definición avanzada de la exposición principal</button></div></div>
 
                             </div>
                             
                             <div ng-show="viewCtrl.viewFlags.activeSubsection == 'avanzadas'">
                                 
                                 <div class="form-group">
-                                    <div>La definición de la exposición principal requiere datos adicionales (analíticas, derivaciones a especialistas...)
+                                    <div>La definición de la exposición principal requiere datos adicionales (analíticas, derivaciones...)
                                         <label class="radio-inline">
                                           <input type="radio" name="exposicionUsaDGP" ng-model="viewCtrl.protocolo.exposicion.adicionales.requerido" ng-value="true"> Si
                                         </label>
@@ -505,7 +536,7 @@
                                     
                                 </div>
                                 
-                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('exposicion','comentarios')">Siguiente: Comentarios sobre exposición principal</button>
+                                <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('exposicion','comentarios')">Siguiente: Comentarios sobre exposición principal</button></div></div>
                                 
                             </div>
                                 
@@ -515,7 +546,7 @@
                                     <textarea class="form-control" rows="16" maxlength="1500" ng-model="viewCtrl.protocolo.exposicion.comentarios"></textarea>
                                 </div>
                                 
-                                <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('covariables','main')">Siguiente: Covariables</button>
+                                <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('covariables','main')">Siguiente: Covariables</button></div></div>
                             </div>
                             
                             
@@ -523,12 +554,12 @@
                             
                         </div>
                         <div ng-show="viewCtrl.viewFlags.activeSection=='covariables'">
-                            <h1>Covariables</h1>
-                            <button class="btn btn-success" ng-hide="viewCtrl.viewFlags.creatingCovariable || viewCtrl.viewFlags.editingCovariable" ng-click='viewCtrl.viewFlags.creatingCovariable = true'><h5><span class="glyphicon glyphicon-plus-sign"></span> Crear covariable</h5></button>
+                            <h1>Covariables <button class="btn btn-next" ng-hide="viewCtrl.viewFlags.creatingCovariable || viewCtrl.viewFlags.editingCovariable" ng-click='viewCtrl.viewFlags.creatingCovariable = true'><span class="glyphicon glyphicon-plus-sign"></span> Crear covariable</button></h1>
+                            
                             
                             <div class="form" ng-show="viewCtrl.viewFlags.creatingCovariable">
                                 <div class="form-group">
-                                    <label class="control-label" for="formSexo">La covariable es:</label>
+                                    <label class="control-label" for="formSexo">La nueva  covariable es:</label>
                                     <select class="form-control" ng-model="viewCtrl.newCovariable.tipo" ng-change="viewCtrl.syncNewCovariableName()">
                                         <option value="diagnostico" selected>Un diagnóstico</option>
                                         <option value="farmaco">El uso de un fármaco</option>
@@ -540,22 +571,23 @@
                                 
                                 <div ng-hide="viewCtrl.newCovariable.tipo == ''">
                                     <div class="form-group">
-                                        <label>Nombre de la covariable </label>
+                                        <label>Nombre de la nueva covariable </label>
                                         <input type="text" class="form-control" ng-model="viewCtrl.newCovariable.nombre"></input>
                                     </div>
                                     
                                     <div class="form-group" ng-show="viewCtrl.newCovariable.tipo === 'diagnostico' || viewCtrl.newCovariable.tipo === 'farmaco'">
-                                        <label>Definición</label>
+                                        <label>Definición de la nueva covariable</label>
                                         <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.newCovariable.definicion"></textarea>
                                     </div>
                                     
                                     <div class="form-group" ng-show="viewCtrl.newCovariable.tipo === 'diagnostico' || viewCtrl.newCovariable.tipo === 'farmaco'">
                                         <div>
-                                            <input type="radio" name="newCovariableTemporalidad" value="ever" ng-model="viewCtrl.newCovariable.temporalidad.tipo"> en cualquier momento antes de la fecha del evento.
+                                            <input type="radio" name="newCovariableTemporalidad" value="ever" ng-model="viewCtrl.newCovariable.temporalidad.tipo"> buscar la covariable en cualquier momento antes de la fecha índice.
                                         </div>
                                         <div>
-                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.newCovariable.temporalidad.tipo">solo en los <input type="text" ng-model="viewCtrl.newCovariable.temporalidad.dias" size="2"> días previos al evento.
+                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.newCovariable.temporalidad.tipo">buscar la covariable solo en los <input type="text" ng-model="viewCtrl.newCovariable.temporalidad.dias" size="2"> días previos a la fecha índice.
                                         </div>
+                                        <div>*fecha índice es la fecha en la que ocurre el caso o en la que se selecionan sus controles</div>
                                     </div>
                                     
                                     <div class="form-group">
@@ -563,79 +595,98 @@
                                         <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.newCovariable.comentarios"></textarea>
                                     </div>
     
+                                    <center><button class="btn btn-next" ng-click='viewCtrl.addCovariable()'>Añadir covariable</button></center>
                                     
-                                    <button class="btn btn-success btn-lg" ng-click='viewCtrl.addCovariable()'>Añadir covariable</button>
                                 </div>
 
                             </div>
                             
-                            <div class="form" ng-show="viewCtrl.viewFlags.editingCovariable">
-                                <div class="form-group">
-                                    <label class="control-label" for="formSexo">La covariable es:</label>
-                                    <select class="form-control" ng-model="viewCtrl.covariables[self.editingCovariableIndex].tipo" ng-change="viewCtrl.syncNewCovariableName()">
-                                        <option value="diagnostico" selected>Un diagnóstico</option>
-                                        <option value="farmaco">El uso de un fármaco</option>
-                                        <option value="tabaco">Tabaquismo</option>
-                                        <option value="alcohol">Consumo de alcohol</option>
-                                        <option value="imc">Índice de masa corporal</option>
-                                    </select>
+                            <div class="panel panel-bifap" ng-show="viewCtrl.viewFlags.editingCovariable">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><span ng-class="{'icon-user-md': viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].tipo == 'diagnostico', 'icon-pill': viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].tipo == 'farmaco', 'glyphicon glyphicon-briefcase': viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].tipo != 'diagnostico' && viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].tipo != 'farmaco'}"></span> {{viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].nombre}} (editar detalles)</h4>
                                 </div>
                                 
-                                <div ng-hide="viewCtrl.newCovariable.tipo == ''">
-                                    <div class="form-group">
-                                        <label>Nombre de la covariable </label>
-                                        <input type="text" class="form-control" ng-model="viewCtrl.covariables[self.editingCovariableIndex].nombre"></input>
-                                    </div>
-                                    
-                                    <div class="form-group" ng-show="viewCtrl.covariables[self.editingCovariableIndex].tipo === 'diagnostico' || viewCtrl.covariables[self.editingCovariableIndex].tipo === 'farmaco'">
+                                <div class="panel-body">
+
+                                    <div class="form-group" ng-show="viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].tipo === 'diagnostico' || viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].tipo === 'farmaco'">
                                         <label>Definición</label>
-                                        <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.covariables[self.editingCovariableIndex].definicion"></textarea>
+                                        <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].definicion"></textarea>
                                     </div>
                                     
-                                    <div class="form-group" ng-show="viewCtrl.covariables[self.editingCovariableIndex].tipo === 'diagnostico' || viewCtrl.covariables[self.editingCovariableIndex].tipo === 'farmaco'">
+                                    <div class="form-group" ng-show="viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].tipo === 'diagnostico' || viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].tipo === 'farmaco'">
                                         <div>
-                                            <input type="radio" name="newCovariableTemporalidad" value="ever" ng-model="viewCtrl.covariables[self.editingCovariableIndex].temporalidad.tipo"> en cualquier momento antes de la fecha del evento.
+                                            <input type="radio" name="newCovariableTemporalidad" value="ever" ng-model="viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].temporalidad.tipo"> en cualquier momento antes de la fecha del evento.
                                         </div>
                                         <div>
-                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.covariables[self.editingCovariableIndex].temporalidad.tipo">solo en los <input type="text" ng-model="viewCtrl.covariables[self.editingCovariableIndex].temporalidad.dias" size="2"> días previos al evento.
+                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.protocolo.covariables[self.editingCovariableIndex].temporalidad.tipo">solo en los <input type="text" ng-model="viewCtrl.protocolo.covariables[self.editingCovariableIndex].temporalidad.dias" size="2"> días previos al evento.
                                         </div>
                                     </div>
-                                    
                                     <div class="form-group">
                                         <label>Comentarios adicionales</label>
-                                        <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.covariables[self.editingCovariableIndex].comentarios"></textarea>
+                                        <textarea class="form-control" rows="6" maxlength="1500" ng-model="viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].comentarios"></textarea>
                                     </div>
-    
-                                    
-                                    <button class="btn btn-success btn-lg" ng-click='viewCtrl.viewFlags.editingCovariable = false'>Modificar covariable</button>
-                                </div>
-
-                            </div>
-                            
-                            
-                            
-                            <div class="panel panel-default" style="margin-top: 50px; padding: 10px;">
-                                <div ng-repeat="covariable in viewCtrl.protocolo.covariables track by $index">
-                                    <div class="form-inline">
-                                        <span style="font-size: 2em" ng-class="{'icon-user-md': covariable.tipo == 'diagnostico', 'icon-pill': covariable.tipo == 'farmaco', 'glyphicon glyphicon-briefcase': covariable.tipo != 'diagnostico' && covariable.tipo != 'farmaco'}"></span>
-                                       <input ng-model="covariable.nombre" type="text" class="form-control"></input>
-                                       <button class="btn btn-info" ng-click="viewCtrl.editCovariable($index)"><span class="glyphicon glyphicon-cog"></span></button>
-                                       
-                                       
-                                       
-                                       <button class="btn btn-danger" ng-click="viewCtrl.deleteCovariable(covariable)"><span class="glyphicon glyphicon-trash"></span></button>
-                                    </div>
+                                    <center><button class="btn btn-next" ng-click='viewCtrl.viewFlags.editingCovariable = false'><span style="font-size: 2em" class="glyphicon glyphicon-ok-circle"></span></button></center>
                                 </div>
                             </div>
                             
-                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('analisis','main')">Siguiente: Análisis</button>
+                            
+                            
+                            <div class="panel panel-bifap" style="margin-top: 20px">
+                                <div class="panel-heading"><h3 class="panel-title">Lista de covariables</h3></div>
+                                <div class="panel-body">
+                                    <div ng-show="viewCtrl.protocolo.covariables.length < 1">No se ha definido ninguna covariable</div>
+                                    <div ng-repeat="covariable in viewCtrl.protocolo.covariables track by $index">
+                                        <div class="col-md-6">
+                                            <div class="form-inline">
+                                                <span style="font-size: 2em" ng-class="{'icon-user-md': covariable.tipo == 'diagnostico', 'icon-pill': covariable.tipo == 'farmaco', 'glyphicon glyphicon-briefcase': covariable.tipo != 'diagnostico' && covariable.tipo != 'farmaco'}"></span>
+                                               <input ng-model="covariable.nombre" type="text" class="form-control"></input>
+                                               <button class="btn btn-bifap" ng-click="viewCtrl.editCovariable($index)"><span class="glyphicon glyphicon-cog"></span></button>
+                                               
+                                               
+                                               
+                                               <button class="btn btn-next" data-toggle="modal" data-target="#deleteCovariableModal" ng-click="viewCtrl.setVariableToDelete(covariable)"><span class="glyphicon glyphicon-trash"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="deleteCovariableModal" class="modal fade" tabindex="-1" role="dialog">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-body">
+                                    <center>
+                                       <p>¿Está seguro de que quiere eliminar la covariable {{viewCtrl.covariableToDelete.nombre}}?</p>
+                                        <p><span style="font-size: 1.5em" class="glyphicon glyphicon-warning-sign"></span></p>
+                                        <strong>¡Atención! esta acción es irreversible.</strong>
+                                    </center>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <center>
+                                            <button type="button" class="btn btn-bifap" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancelar</button>
+                                            </center>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <center>
+                                            <button type="button" class="btn btn-next" data-dismiss="modal" ng-click="viewCtrl.deleteCovariable()"><span class="glyphicon glyphicon-trash"></span> Borrar</button>
+                                            </center>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div><!-- /.modal-content -->
+                              </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+                            
+                            <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('analisis','main')">Siguiente: Análisis</button></div></div>
                             
                         </div>
                         <div ng-show="viewCtrl.viewFlags.activeSection=='analisis'">
                             <h1>Análisis</h1>
                             <p>Indique los análisis que planea realizar en el estudio.</p>
                             
-                            <div>
+                            <div class="form-group">
                             Calcular incidencia del evento en la cohorte
                                 <label class="radio-inline">
                                   <input type="radio" ng-value="true" ng-model="viewCtrl.protocolo.analisis.incidencia.requerido"> Si
@@ -649,7 +700,7 @@
                                 </div>
                             </div>
                             
-                            <div>
+                            <div class="form-group">
                             Calcular estimadores crudos y ajustados de Odds Ratio
                                 <label class="radio-inline">
                                   <input type="radio" ng-value="true" ng-model="viewCtrl.protocolo.analisis.or.requerido"> Si
@@ -663,7 +714,7 @@
                                 </div>
                             </div>
                             
-                            <div>
+                            <div class="form-group">
                             Análisis de subgrupos
                                 <label class="radio-inline">
                                   <input type="radio" ng-value="true" ng-model="viewCtrl.protocolo.analisis.subgrupos.requerido"> Si
@@ -677,7 +728,7 @@
                                 </div>
                             </div>
                             
-                            <div>
+                            <div class="form-group">
                             Análisis de sensibilidad
                                 <label class="radio-inline">
                                   <input type="radio" ng-value="true" ng-model="viewCtrl.protocolo.analisis.sensibilidad.requerido"> Si
@@ -691,44 +742,42 @@
                                 </div>
                             </div>
                             
-                            <div>
+                            <div class="form-group">
                                 <label for="otroCalculoDetalles">Describa otros análisis adicionales de manera opcional</label>
                                 <textarea id="otroCalculoDetalles" class="form-control" rows="10" maxlength="1500" ng-model="viewCtrl.protocolo.analisis.otros"></textarea>
                             </div>
-                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('limitaciones','main')">Siguiente: Limitaciones</button>
+                            
+                            <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('limitaciones','main')">Siguiente: Limitaciones</button></div></div>
                         </div>
+                        
                         <div ng-show="viewCtrl.viewFlags.activeSection=='limitaciones'">
                             <h1>Limitaciones</h1>
-                            <div>
+                            <div class="form-group">
                                 <label>Señale las potenciales limitaciones del protocolo de estudio</label>
                                 <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.limitaciones"></textarea>
                             </div>
-                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('cronograma','main')">Siguiente: Cronograma</button>
+                            <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('cronograma','main')">Siguiente: Cronograma</button></div></div>
                         </div>
                         <div ng-show="viewCtrl.viewFlags.activeSection=='cronograma'">
                             <h1>Cronograma</h1>
                             
-                            <div>
+                            <div class="form-group">
                                 <label>Describa un cronograma aproximado del estudio</label>
                                 <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.cronograma"></textarea>
                             </div>
-                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('bibliografia','main')">Siguiente: Bibliografía</button>
+                            <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('bibliografia','main')">Siguiente: Bibliografía</button></div></div>
                         </div>
                         <div ng-show="viewCtrl.viewFlags.activeSection=='bibliografia'">
                             <h1>Bibliografía</h1>
-                            <div>
+                            <div class="form-group">
                                 <label>Incluya lista de referencias bibliográficas relevantes en estilo Vancouver</label>
                                 <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.bibliografia"></textarea>
                             </div>
-                            <button class="btn btn-info btn-lg" ng-click="viewCtrl.setSubsection('resumen','main')">Siguiente: Resumen final</button>
+                            <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('resumen','main')">Siguiente: Resumen final</button></div></div>
                         </div>
                         <div ng-show="viewCtrl.viewFlags.activeSection=='resumen'">
                             <h1>Resumen</h1>
 
-                            
-                            
-                            
-                            
                             <div class="form-group">
                                 <label for="formResumenDelProyecto">Resumen del proyecto</label>
                                 <textarea ng-model="viewCtrl.protocolo.resumen.manual" id="formResumenDelProyecto" class="form-control" rows="10" maxlength="1500"></textarea>
@@ -736,7 +785,7 @@
                             </div>
                             
                             <p>Ejemplo de resumen generado automáticamente (puede usarlo como base para redactar el suyo)</p>
-                            <div>{{viewCtrl.protocolo.resumen.automatico}}</div>
+                            <div class="bf-resumen-automatico">{{viewCtrl.protocolo.resumen.automatico}}</div>
                             
 
 

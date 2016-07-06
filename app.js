@@ -150,7 +150,13 @@
             'temporalidad': {'tipo': 'ever', 'dias': '30'}
         }
         
+        self.covariableToDelete = {};
+        
         self.error_msg = [];
+        
+        self.setVariableToDelete = function (covariable) {
+            self.covariableToDelete = covariable;
+        }
         
         self.test = function() {
             console.log(self);
@@ -368,14 +374,14 @@
             self.viewFlags.creatingCovariable = true;
         }
         
-        self.deleteCovariable = function(covariable) {
-            var newCovArray = [];
-            self.protocolo.covariables.forEach(function(pcov){
-                if(pcov.nombre != covariable.nombre) {
-                    newCovArray.push(covariable);
-                }
-            });
-            self.protocolo.covariables = newCovArray;
+        self.deleteCovariable = function() {
+                var newCovArray = [];
+                self.protocolo.covariables.forEach(function(pcov){
+                    if(pcov.nombre != self.covariableToDelete.nombre) {
+                        newCovArray.push(pcov);
+                    }
+                });
+                self.protocolo.covariables = newCovArray;
         }
         
         self.editCovariable = function(covariableIndex) {
@@ -397,6 +403,11 @@
         }
         
         self.addCovariable = function() {
+            console.log();
+            if(['tabaco','alcohol','imc'].indexOf(self.newCovariable.tipo) > -1) {
+                console.log("es predefinida");
+                self.newCovariable.temporalidad = {'tipo': null, 'dias': ''}
+            }
             self.protocolo.covariables.push(self.newCovariable);
             self.newCovariable = {
                                  'nombre': '',

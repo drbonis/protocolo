@@ -1,3 +1,10 @@
+/*
+#BB2253 Rojo oscuro
+#EC185D Rojo brillante
+#FF9171 Naranja oscuro
+#FFB383 Naranja claro
+*/
+
 textarea {
     resize: none;
 }
@@ -7,9 +14,150 @@ textarea {
 }
 
 .bf-completed{
-    color: green;
+    color: #EC185D;
 }
 
 .bf-active {
     background-color: red;
 }
+
+.bf-underlined {
+    border-bottom: dotted 1px #FF9171;
+}
+
+.panel-bifap {
+    background-color: none!important;
+    border-color: #FF9171!important;
+}
+
+.panel-bifap > .panel-heading {
+    background-color: #FF9171!important;
+    color: #FFFFFF!important;
+    font-size: 1.3em;
+}
+
+h1 {font-family: 'Sumana', serif;}
+
+.sumana {font-family: 'Sumana', serif;}
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+.nav-pills > li > a:hover {
+    font-family: 'Raleway', sans-serif;
+    color: #BB2253!important;
+    background-color: #FFB383!important;
+}
+
+.nav-pills > li > a, .nav-pills > li > a:focus  {
+    font-family: 'Raleway', sans-serif;
+    color: #BB2253!important;
+    background-color: none!important
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover  {
+    font-family: 'Raleway', sans-serif;
+    color: white!important;
+    background-color: #FF9171;
+}
+
+.btn-next { 
+
+  font-family: 'Raleway', sans-serif;
+  color: #FFFFFF; 
+  background-color: #BB2253; 
+  border-color: #BB2253; 
+} 
+ 
+.btn-next:hover, 
+.btn-next:focus, 
+.btn-next:active, 
+.btn-next.active, 
+.open .dropdown-toggle.btn-next { 
+  color: #FFFFFF; 
+  background-color: #EC185D; 
+  border-color: #BB2253; 
+} 
+ 
+.btn-next:active, 
+.btn-next.active, 
+.open .dropdown-toggle.btn-next { 
+  background-image: none; 
+} 
+ 
+.btn-next.disabled, 
+.btn-next[disabled], 
+fieldset[disabled] .btn-next, 
+.btn-next.disabled:hover, 
+.btn-next[disabled]:hover, 
+fieldset[disabled] .btn-next:hover, 
+.btn-next.disabled:focus, 
+.btn-next[disabled]:focus, 
+fieldset[disabled] .btn-next:focus, 
+.btn-next.disabled:active, 
+.btn-next[disabled]:active, 
+fieldset[disabled] .btn-next:active, 
+.btn-next.disabled.active, 
+.btn-next[disabled].active, 
+fieldset[disabled] .btn-next.active { 
+  background-color: #BB2253; 
+  border-color: #BB2253; 
+} 
+ 
+.btn-next .badge { 
+  color: #BB2253; 
+  background-color: #FFFFFF; 
+}
+
+.btn-bifap { 
+
+  font-family: 'Raleway', sans-serif;
+  color: #FFFFFF; 
+  background-color: #FF9171; 
+  border-color: #FF9171; 
+} 
+ 
+.btn-bifap:hover, 
+.btn-bifap:focus, 
+.btn-bifap:active, 
+.btn-bifap.active, 
+.open .dropdown-toggle.btn-bifap { 
+  color: #FFFFFF; 
+  background-color: #FFB383; 
+  border-color: #FF9171; 
+} 
+ 
+.btn-bifap:active, 
+.btn-bifap.active, 
+.open .dropdown-toggle.btn-bifap { 
+  background-image: none; 
+} 
+ 
+.btn-bifap.disabled, 
+.btn-bifap[disabled], 
+fieldset[disabled] .btn-bifap, 
+.btn-bifap.disabled:hover, 
+.btn-bifap[disabled]:hover, 
+fieldset[disabled] .btn-bifap:hover, 
+.btn-bifap.disabled:focus, 
+.btn-bifap[disabled]:focus, 
+fieldset[disabled] .btn-bifap:focus, 
+.btn-bifap.disabled:active, 
+.btn-bifap[disabled]:active, 
+fieldset[disabled] .btn-bifap:active, 
+.btn-bifap.disabled.active, 
+.btn-bifap[disabled].active, 
+fieldset[disabled] .btn-bifap.active { 
+  background-color: #FF9171; 
+  border-color: #FF9171; 
+} 
+ 
+.btn-bifap .badge { 
+  color: #FF9171; 
+  background-color: #FFFFFF; 
+}
+
+
+
+
