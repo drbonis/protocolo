@@ -33,14 +33,14 @@
     <body ng-controller="ViewController as viewCtrl">
         <div class="container-fluid">
             <div class="page-header">
-                <h2 class="sumana">Protocolo de diseño Caso-Control BIFAP v0.3 <span class="glyphicon glyphicon-cog" ng-click="viewCtrl.test()"></span></h2>
+                <h2 class="sumana">Protocolo de diseño Caso-Control BIFAP v0.31 <span class="glyphicon glyphicon-cog" ng-click="viewCtrl.test()"></span></h2>
             </div>
             <div class="row fixed-height padded">
                 <div class="col-md-12">
                     <div class="col-md-3" role="navigation">
                         <ul class="nav nav-pills nav-stacked">
                             <li ng-class="{'active': viewCtrl.checkSubsection('general','main')}"><a ng-click="viewCtrl.setSubsection('general','main')" href="#">General <span class="glyphicon glyphicon-ok-sign bf-completed" ng-show="viewCtrl.checkCompleteness('general','main').validation"></span></a></li>
-                            <li ng-class="{'active': viewCtrl.checkSubsection('general','titulo')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','titulo')" href="#">Título e hipótesis <span class="glyphicon glyphicon-ok-sign bf-completed" ng-show="viewCtrl.checkCompleteness('general','titulo').validation"></span></a></li>
+                            <li ng-class="{'active': viewCtrl.checkSubsection('general','titulo')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" ><a ng-click="viewCtrl.setSubsection('general','titulo')" href="#" class="bf-menu-subsect">Título e hipótesis <span class="glyphicon glyphicon-ok-sign bf-completed" ng-show="viewCtrl.checkCompleteness('general','titulo').validation"></span></a></li>
                             <li ng-class="{'active': viewCtrl.checkSubsection('general','antecedentes')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','antecedentes')" href="#">Antecedentes <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('general','antecedentes').validation}"></span></a></li>
                             <li ng-class="{'active': viewCtrl.checkSubsection('general','objetivos')}" ng-show="viewCtrl.viewFlags.activeSection=='general'" class="bf-menu-subsect"><a ng-click="viewCtrl.setSubsection('general','objetivos')" href="#">Objetivos <span class="glyphicon" ng-class="{'glyphicon-ok-sign bf-completed': viewCtrl.checkCompleteness('general','objetivos').validation}"></span></a></li>
                             
@@ -585,7 +585,7 @@
                                             <input type="radio" name="newCovariableTemporalidad" value="ever" ng-model="viewCtrl.newCovariable.temporalidad.tipo"> buscar la covariable en cualquier momento antes de la fecha índice.
                                         </div>
                                         <div>
-                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.newCovariable.temporalidad.tipo">buscar la covariable solo en los <input type="text" ng-model="viewCtrl.newCovariable.temporalidad.dias" size="2"> días previos a la fecha índice.
+                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.newCovariable.temporalidad.tipo"> buscar la covariable solo en los <input type="text" ng-model="viewCtrl.newCovariable.temporalidad.dias" size="2"> días previos a la fecha índice.
                                         </div>
                                         <div>*fecha índice es la fecha en la que ocurre el caso o en la que se selecionan sus controles</div>
                                     </div>
@@ -618,7 +618,7 @@
                                             <input type="radio" name="newCovariableTemporalidad" value="ever" ng-model="viewCtrl.protocolo.covariables[viewCtrl.editingCovariableIndex].temporalidad.tipo"> en cualquier momento antes de la fecha del evento.
                                         </div>
                                         <div>
-                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.protocolo.covariables[self.editingCovariableIndex].temporalidad.tipo">solo en los <input type="text" ng-model="viewCtrl.protocolo.covariables[self.editingCovariableIndex].temporalidad.dias" size="2"> días previos al evento.
+                                            <input type="radio" name="newCovariableTemporalidad" value="recent" ng-model="viewCtrl.protocolo.covariables[self.editingCovariableIndex].temporalidad.tipo"> solo en los <input type="text" ng-model="viewCtrl.protocolo.covariables[self.editingCovariableIndex].temporalidad.dias" size="2"> días previos al evento.
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -636,15 +636,15 @@
                                 <div class="panel-body">
                                     <div ng-show="viewCtrl.protocolo.covariables.length < 1">No se ha definido ninguna covariable</div>
                                     <div ng-repeat="covariable in viewCtrl.protocolo.covariables track by $index">
-                                        <div class="col-md-6">
-                                            <div class="form-inline">
-                                                <span style="font-size: 2em" ng-class="{'icon-user-md': covariable.tipo == 'diagnostico', 'icon-pill': covariable.tipo == 'farmaco', 'glyphicon glyphicon-briefcase': covariable.tipo != 'diagnostico' && covariable.tipo != 'farmaco'}"></span>
-                                               <input ng-model="covariable.nombre" type="text" class="form-control"></input>
-                                               <button class="btn btn-bifap" ng-click="viewCtrl.editCovariable($index)"><span class="glyphicon glyphicon-cog"></span></button>
+                                        <div class="col-md-6" style="display:table; margin-top: 10px;">
+                                            <div class="form-inline" style="display: table-cell; vertical-align: middle;">
+                                                <span  ng-class="{'icon-user-md': covariable.tipo == 'diagnostico', 'icon-pill': covariable.tipo == 'farmaco', 'glyphicon glyphicon-briefcase': covariable.tipo != 'diagnostico' && covariable.tipo != 'farmaco'}"></span>
+                                               <input ng-model="covariable.nombre" type="text" class="form-control" ng-change="covariable.nombre.toUppercase()" ></input>
+                                               <button class="btn btn-bifap" ng-click="viewCtrl.editCovariable($index)" ><span class="glyphicon glyphicon-cog"></span></button>
                                                
                                                
                                                
-                                               <button class="btn btn-next" data-toggle="modal" data-target="#deleteCovariableModal" ng-click="viewCtrl.setVariableToDelete(covariable)"><span class="glyphicon glyphicon-trash"></span></button>
+                                               <button class="btn btn-next" data-toggle="modal" data-target="#deleteCovariableModal" ng-click="viewCtrl.setVariableToDelete(covariable)" ><span class="glyphicon glyphicon-trash"></span></button>
                                             </div>
                                         </div>
                                     </div>
@@ -754,7 +754,7 @@
                             <h1>Limitaciones</h1>
                             <div class="form-group">
                                 <label>Señale las potenciales limitaciones del protocolo de estudio</label>
-                                <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.limitaciones"></textarea>
+                                <textarea class="form-control" rows="20" maxlength="1500" ng-model="viewCtrl.protocolo.limitaciones"></textarea>
                             </div>
                             <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('cronograma','main')">Siguiente: Cronograma</button></div></div>
                         </div>
@@ -763,7 +763,7 @@
                             
                             <div class="form-group">
                                 <label>Describa un cronograma aproximado del estudio</label>
-                                <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.cronograma"></textarea>
+                                <textarea class="form-control" rows="20" maxlength="1500" ng-model="viewCtrl.protocolo.cronograma"></textarea>
                             </div>
                             <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('bibliografia','main')">Siguiente: Bibliografía</button></div></div>
                         </div>
@@ -771,7 +771,7 @@
                             <h1>Bibliografía</h1>
                             <div class="form-group">
                                 <label>Incluya lista de referencias bibliográficas relevantes en estilo Vancouver</label>
-                                <textarea class="form-control" rows="3" maxlength="1500" ng-model="viewCtrl.protocolo.bibliografia"></textarea>
+                                <textarea class="form-control" rows="20" maxlength="3500" ng-model="viewCtrl.protocolo.bibliografia"></textarea>
                             </div>
                             <div class"row"><div class="col-md-4 col-md-offset-8"><button style="float: right"  class="btn btn-bifap btn-lg" ng-click="viewCtrl.setSubsection('resumen','main')">Siguiente: Resumen final</button></div></div>
                         </div>

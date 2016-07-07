@@ -11,6 +11,8 @@ textarea {
 
 .bf-menu-subsect {
     text-align: center;
+    border: solid 1px #FFB383;
+    font-size: 0.8em;
 }
 
 .bf-completed{

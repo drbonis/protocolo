@@ -375,6 +375,8 @@
         }
         
         self.deleteCovariable = function() {
+                self.editingCovariableIndex = '';
+                self.viewFlags.editingCovariable = false;
                 var newCovArray = [];
                 self.protocolo.covariables.forEach(function(pcov){
                     if(pcov.nombre != self.covariableToDelete.nombre) {
@@ -385,21 +387,29 @@
         }
         
         self.editCovariable = function(covariableIndex) {
-            console.log(covariableIndex);
             self.editingCovariableIndex = covariableIndex;
             self.viewFlags.editingCovariable = true;
         }
         
         self.syncNewCovariableName = function() {
-            if(self.newCovariable.tipo === 'tabaco') {
-                self.newCovariable.nombre = "TABACO";
+            switch(self.newCovariable.tipo) {
+                case 'tabaco':
+                    self.newCovariable.nombre = "TABACO";
+                    break;
+                case 'alcohol':
+                    self.newCovariable.nombre = "ALCOHOL";
+                    break;
+                case 'imc':
+                    self.newCovariable.nombre = "IMC";
+                    break;
+                default:
+                    if(['IMC','ALCOHOL','TABACO'].indexOf(self.newCovariable.nombre) > -1) {
+                        self.newCovariable.nombre = "";    
+                    }
+                    
+                    break;
             }
-            if(self.newCovariable.tipo === 'alcohol') {
-                self.newCovariable.nombre = "ALCOHOL";
-            }
-            if(self.newCovariable.tipo === 'imc') {
-                self.newCovariable.nombre = "IMC";
-            }
+
         }
         
         self.addCovariable = function() {
